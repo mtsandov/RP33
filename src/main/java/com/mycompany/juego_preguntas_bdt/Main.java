@@ -47,5 +47,6 @@ public class Main {
         raiz.setRight(a1b);
 
         System.out.println(BinaryTree.height(raiz));
+        System.out.println(raiz.isLeaf());
     }
 }

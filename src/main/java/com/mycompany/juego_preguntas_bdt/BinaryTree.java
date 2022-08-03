@@ -28,6 +28,10 @@ public class BinaryTree<E> {
         return this.root == null;
     }
 
+    public boolean isLeaf(){
+        return (this.getRoot().getLeft() == null && this.getRoot().getRight() == null);
+    }
+
     public void setRootContent(E content) {
         this.root = new BinaryTreeNode<>(content);
     }
