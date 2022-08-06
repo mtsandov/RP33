@@ -7,6 +7,9 @@ package com.mycompany.juego_preguntas_bdt;
 
 import java.util.LinkedList;
 import com.mycompany.juego_preguntas_bdt.BinaryTree;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Stack;
 
 /**
  *
@@ -15,9 +18,7 @@ import com.mycompany.juego_preguntas_bdt.BinaryTree;
 public class Main {
     public static void main(String Args[]){
 
-        LinkedList<BinaryTree<String>> listado = BinaryTree.construirNodosPreguntas("documents/preguntas.txt");
-
-        for (BinaryTree<String> binaryTree : listado) {
+        /*for (BinaryTree<String> binaryTree : listado) {
             System.out.println(binaryTree.getRootContent());
         }
 
@@ -48,5 +49,24 @@ public class Main {
 
         System.out.println(BinaryTree.height(raiz));
         System.out.println(raiz.isLeaf());
+        */
+        Stack<BinaryTree<String>> pilaPregs = BinaryTree.construirPilaPreguntas("documents/preguntas.txt");
+        
+        BinaryTree<String> BinaryTreeQuestion = BinaryTree.crearBinaryTreePreguntas(pilaPregs);
+        
+        Map<String, Queue<String>> mapaRespuestas = BinaryTree.createMapSheets("documents/respuestas.txt");
+        
+        for(String animal : mapaRespuestas.keySet()){
+            System.out.println(animal + " : " + mapaRespuestas.get(animal));
+        }
+        
+        Queue<String> answerOso = mapaRespuestas.get("Oso");
+        
+        BinaryTree.chargeAnswers(BinaryTreeQuestion, new BinaryTree("Oso"), answerOso);
+        
+        LinkedList<String> breadthTraversal = BinaryTreeQuestion.breadthTraversal();
+        for(String s : breadthTraversal){
+            System.out.println(s);
+        }
     }
 }

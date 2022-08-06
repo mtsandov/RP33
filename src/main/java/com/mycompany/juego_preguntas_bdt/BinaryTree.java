@@ -5,8 +5,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Stack;
+import java.util.TreeMap;
 
 public class BinaryTree<E> {
 
@@ -124,24 +126,75 @@ public class BinaryTree<E> {
         return traversal;
     }
 
-    public static LinkedList<BinaryTree<String>> construirNodosPreguntas(String ruta){
-        LinkedList<BinaryTree<String>> resultado = new LinkedList<>();
-
+    public static Stack<BinaryTree<String>> construirPilaPreguntas(String ruta){
+        
         try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
             String strCurrentLine;
+            Stack<BinaryTree<String>> resultado = new Stack<>();
             while ((strCurrentLine = br.readLine()) != null){
                 String pregunta = strCurrentLine;
-                BinaryTree<String> arbolNuevo = new BinaryTree<String>(pregunta);
-                resultado.add(arbolNuevo);
+                resultado.push(new BinaryTree<String>(pregunta));
             }
             br.close();
+            return resultado;
         } catch (FileNotFoundException ex) {
             System.out.println("archivo no existe");
         } catch (IOException   ex) {
             System.out.println("error io:"+ex.getMessage());
         }
 
-        return resultado;
+        return null;
+    }
+    
+    
+    public static BinaryTree<String> crearBinaryTreePreguntas(Stack<BinaryTree<String>> piloPreguntas){
+        
+        while(piloPreguntas.size() > 1){
+            BinaryTree<String> treeUnder = piloPreguntas.pop();
+            BinaryTree<String> treeUp = piloPreguntas.pop();
+            treeUp.setLeft(treeUnder);
+            treeUp.setRight(treeUnder);
+            piloPreguntas.push(treeUp);
+        }
+        return piloPreguntas.pop(); 
+    }
+    
+    
+    public static Map<String, Queue<String>> createMapSheets(String ruta){
+        
+        Map<String, Queue<String>> MapAnswers = new TreeMap();
+        try(BufferedReader buff = new BufferedReader(new FileReader(ruta));){   
+           String respuesta;
+           while((respuesta = buff.readLine()) != null){
+               
+                String[] array = respuesta.split(" ");
+                Queue<String> arrayAnswers = new LinkedList();
+                for(int i=1 ; i < array.length ; i++)
+                    arrayAnswers.add(array[i]);
+                MapAnswers.put(array[0], arrayAnswers);
+           }
+        }   catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            
+        }
+        return MapAnswers;
+    }
+    
+    public static void chargeAnswers(BinaryTree<String> treeQuestion, BinaryTree<String> animal, Queue<String> answers){
+        if(treeQuestion.isLeaf()){
+            if(answers.poll().equals("si"))
+                treeQuestion.setLeft(animal);
+            else
+                treeQuestion.setRight(animal);
+            return;
+        }
+        else{
+            String answer = answers.poll();
+            if(answer.equals("si"))
+                chargeAnswers(treeQuestion.getLeft(), animal, answers);
+            else
+                chargeAnswers(treeQuestion.getRight(), animal, answers);
+        }
     }
 
     public static int contarPreguntas(String ruta){
