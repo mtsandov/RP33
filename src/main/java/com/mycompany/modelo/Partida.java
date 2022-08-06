@@ -26,7 +26,7 @@ public class Partida {
         this.preguntas = preguntas;
     }
     
-    public static BinaryTree<String> generarArbolJuego(String rutaPregs, String rutaResp) throws CloneNotSupportedException{
+    public static BinaryTree<String> generarArbolJuego(String rutaPregs, String rutaResp){
         Stack<BinaryTree<String>> pilaPregs = Utilidades.construirPilaPreguntas(rutaPregs);
         
         BinaryTree<String> BinaryTreeQuestion = Utilidades.crearBinaryTreePreguntas(pilaPregs);

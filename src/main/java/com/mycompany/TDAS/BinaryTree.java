@@ -1,14 +1,8 @@
-package com.mycompany.TDAS;
+ package com.mycompany.TDAS;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.Queue;
 import java.util.Stack;
-import java.util.TreeMap;
 
 public class BinaryTree<E> implements Cloneable {
 

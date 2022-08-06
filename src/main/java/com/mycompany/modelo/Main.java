@@ -15,7 +15,7 @@ import com.mycompany.TDAS.*;
 public class Main {
     public static void main(String Args[]) throws CloneNotSupportedException{
 
-        BinaryTree<String> BinaryTreeQuestion = Partida.generarArbolJuego("documents/preguntasPrueba.txt", "documents/respuestasPrueba.txt");
+        BinaryTree<String> BinaryTreeQuestion = Partida.generarArbolJuego("documents/preguntas.txt", "documents/respuestas.txt");
         
         LinkedList<String> breadthTraversal = BinaryTreeQuestion.breadthTraversal();
         for(String s : breadthTraversal){

@@ -21,8 +21,9 @@ import java.util.TreeMap;
  * @author alex_
  */
 public class Utilidades {
-        public static Stack<BinaryTree<String>> construirPilaPreguntas(String ruta){
-        
+    
+    public static Stack<BinaryTree<String>> construirPilaPreguntas(String ruta){
+
         try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
             String strCurrentLine;
             Stack<BinaryTree<String>> resultado = new Stack<>();
@@ -38,11 +39,11 @@ public class Utilidades {
             System.out.println("error io:"+ex.getMessage());
         }
 
-        return null;
+    return null;
     }
     
     
-    public static BinaryTree<String> crearBinaryTreePreguntas(Stack<BinaryTree<String>> piloPreguntas) throws CloneNotSupportedException{
+    public static BinaryTree<String> crearBinaryTreePreguntas(Stack<BinaryTree<String>> piloPreguntas){
         
         while(piloPreguntas.size() > 1){
             BinaryTree<String> treeUnder = piloPreguntas.pop();
