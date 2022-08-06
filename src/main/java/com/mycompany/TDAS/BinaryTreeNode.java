@@ -1,4 +1,4 @@
-package com.mycompany.juego_preguntas_bdt;
+package com.mycompany.TDAS;
 
 class BinaryTreeNode<E> implements Cloneable{
     
