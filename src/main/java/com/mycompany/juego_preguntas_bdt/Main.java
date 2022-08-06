@@ -16,7 +16,7 @@ import java.util.Stack;
  * @author alex_
  */
 public class Main {
-    public static void main(String Args[]){
+    public static void main(String Args[]) throws CloneNotSupportedException{
 
         /*for (BinaryTree<String> binaryTree : listado) {
             System.out.println(binaryTree.getRootContent());

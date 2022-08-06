@@ -1,6 +1,6 @@
 package com.mycompany.juego_preguntas_bdt;
 
-class BinaryTreeNode<E> {
+class BinaryTreeNode<E> implements Cloneable{
     
     private E content;
     private BinaryTree<E> left;

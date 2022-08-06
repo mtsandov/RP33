@@ -10,7 +10,7 @@ import java.util.Queue;
 import java.util.Stack;
 import java.util.TreeMap;
 
-public class BinaryTree<E> {
+public class BinaryTree<E> implements Cloneable {
 
     private BinaryTreeNode<E> root;
     
@@ -51,11 +51,11 @@ public class BinaryTree<E> {
         this.root = root;
     }
 
-    public void setLeft(BinaryTree tree) {
+    public void setLeft(BinaryTree<E> tree) {
         this.root.setLeft(tree);
     }
 
-    public void setRight(BinaryTree tree) {
+    public void setRight(BinaryTree<E> tree) {
         this.root.setRight(tree);
     }
 
@@ -66,7 +66,34 @@ public class BinaryTree<E> {
     public BinaryTree getRight() {
         return this.root.getRight();
     }
-
+    
+    @Override
+    public BinaryTree<E> clone() throws CloneNotSupportedException{
+        
+        return (BinaryTree<E>) super.clone();
+    }
+    
+    public BinaryTree<E> cloneBinaryTree()
+    {
+        BinaryTreeNode<E> root = this.getRoot();
+        // base case
+        if (root == null) {
+            return null;
+        }
+ 
+        // create a new node with the same data as the root node
+        BinaryTree<E> root_tree_copy = new BinaryTree<>(root.getContent());
+ 
+        // clone the left and right subtree
+        if (root.getLeft() != null && root.getRight() != null){
+            root_tree_copy.setLeft(root.getLeft().cloneBinaryTree());
+            root_tree_copy.setRight(root.getRight().cloneBinaryTree());
+        }
+ 
+        // return cloned root node
+        return root_tree_copy;
+    }
+    
     public static int height(BinaryTree root)
     {
         // caso base: el árbol vacío tiene una altura de 0
@@ -152,19 +179,22 @@ public class BinaryTree<E> {
     }
     
     
-    public static BinaryTree<String> crearBinaryTreePreguntas(Stack<BinaryTree<String>> piloPreguntas){
+    public static BinaryTree<String> crearBinaryTreePreguntas(Stack<BinaryTree<String>> piloPreguntas) throws CloneNotSupportedException{
         
         while(piloPreguntas.size() > 1){
             BinaryTree<String> treeUnder = piloPreguntas.pop();
             BinaryTree<String> treeUp = piloPreguntas.pop();
             
+            BinaryTree<String> base = new BinaryTree<>(treeUp);
             BinaryTree<String> c1 = new BinaryTree<>(treeUnder);
             BinaryTree<String> c2 = new BinaryTree<>(treeUnder);
+            
 
             
-            treeUp.setLeft(c1);
-            treeUp.setRight(c2);
-            piloPreguntas.push(treeUp);
+            base.setLeft(c1.cloneBinaryTree());
+            base.setRight(c2.cloneBinaryTree());
+            BinaryTree<String> temp = new BinaryTree<String>(base);
+            piloPreguntas.push(temp.cloneBinaryTree());
         }
         return piloPreguntas.pop(); 
     }
