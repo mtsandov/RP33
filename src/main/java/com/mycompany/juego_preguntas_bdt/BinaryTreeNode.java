@@ -17,6 +17,12 @@ class BinaryTreeNode<E> {
         this.left = left;
         this.right = right;
     }
+    
+    public BinaryTreeNode(BinaryTree<E> arbol, boolean yes){
+        this.content = arbol.getRootContent();
+        this.left = arbol.getLeft();
+        this.right = arbol.getRight();
+    }
 
     public E getContent() {
         return content;

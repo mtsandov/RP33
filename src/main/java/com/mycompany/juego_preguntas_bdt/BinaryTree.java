@@ -13,6 +13,11 @@ import java.util.TreeMap;
 public class BinaryTree<E> {
 
     private BinaryTreeNode<E> root;
+    
+    public BinaryTree(BinaryTree<E> arbol){
+        BinaryTreeNode<E> temp = new BinaryTreeNode<E>(arbol,true);
+        this.root = temp;
+    }
 
     public BinaryTree(E rootContent) {
         this.root = new BinaryTreeNode<>(rootContent);
@@ -152,8 +157,13 @@ public class BinaryTree<E> {
         while(piloPreguntas.size() > 1){
             BinaryTree<String> treeUnder = piloPreguntas.pop();
             BinaryTree<String> treeUp = piloPreguntas.pop();
-            treeUp.setLeft(treeUnder);
-            treeUp.setRight(treeUnder);
+            
+            BinaryTree<String> c1 = new BinaryTree<>(treeUnder);
+            BinaryTree<String> c2 = new BinaryTree<>(treeUnder);
+
+            
+            treeUp.setLeft(c1);
+            treeUp.setRight(c2);
             piloPreguntas.push(treeUp);
         }
         return piloPreguntas.pop(); 
@@ -181,19 +191,40 @@ public class BinaryTree<E> {
     }
     
     public static void chargeAnswers(BinaryTree<String> treeQuestion, BinaryTree<String> animal, Queue<String> answers){
-        if(treeQuestion.isLeaf()){
+        /*if(treeQuestion.getRight() == null || treeQuestion.getLeft() == null){
             if(answers.poll().equals("si"))
-                treeQuestion.setLeft(animal);
-            else
                 treeQuestion.setRight(animal);
+            else
+                treeQuestion.setLeft(animal);
             return;
         }
         else{
             String answer = answers.poll();
             if(answer.equals("si"))
-                chargeAnswers(treeQuestion.getLeft(), animal, answers);
-            else
                 chargeAnswers(treeQuestion.getRight(), animal, answers);
+            else
+                chargeAnswers(treeQuestion.getLeft(), animal, answers);
+        }*/
+        BinaryTree<String> raizActual = treeQuestion;
+        
+        while (!answers.isEmpty()){
+            if(raizActual.getRight() == null || raizActual.getLeft() == null){
+                if(answers.poll().equals("si")){
+                    raizActual.setRight(animal);
+                } else {
+                    raizActual.setLeft(animal);
+                }
+            } 
+            
+            else {
+                String resp = answers.poll();
+                if (resp.equals("si")){
+                    raizActual = raizActual.getRight();
+                } else {
+                    raizActual = raizActual.getLeft();
+                }
+            }
+            
         }
     }
 

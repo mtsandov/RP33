@@ -50,19 +50,24 @@ public class Main {
         System.out.println(BinaryTree.height(raiz));
         System.out.println(raiz.isLeaf());
         */
-        Stack<BinaryTree<String>> pilaPregs = BinaryTree.construirPilaPreguntas("documents/preguntas.txt");
+        Stack<BinaryTree<String>> pilaPregs = BinaryTree.construirPilaPreguntas("documents/preguntasPrueba.txt");
         
         BinaryTree<String> BinaryTreeQuestion = BinaryTree.crearBinaryTreePreguntas(pilaPregs);
         
-        Map<String, Queue<String>> mapaRespuestas = BinaryTree.createMapSheets("documents/respuestas.txt");
+        Map<String, Queue<String>> mapaRespuestas = BinaryTree.createMapSheets("documents/respuestasPrueba.txt");
         
         for(String animal : mapaRespuestas.keySet()){
             System.out.println(animal + " : " + mapaRespuestas.get(animal));
         }
         
-        Queue<String> answerOso = mapaRespuestas.get("Oso");
+        for (String clave : mapaRespuestas.keySet()){
+            Queue<String> answerTemp = mapaRespuestas.get(clave);
         
-        BinaryTree.chargeAnswers(BinaryTreeQuestion, new BinaryTree("Oso"), answerOso);
+            BinaryTree.chargeAnswers(BinaryTreeQuestion, new BinaryTree(clave), answerTemp);
+        }
+        //Queue<String> answerOso = mapaRespuestas.get("Oso");
+        
+        //BinaryTree.chargeAnswers(BinaryTreeQuestion, new BinaryTree("Oso"), answerOso);
         
         LinkedList<String> breadthTraversal = BinaryTreeQuestion.breadthTraversal();
         for(String s : breadthTraversal){
