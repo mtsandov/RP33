@@ -73,6 +73,7 @@ public class BinaryTree<E> implements Cloneable {
         return (BinaryTree<E>) super.clone();
     }
     
+    //Metodo a la solucion de problema de hijos con la misma direccion de memoria a partir del segundo nivel
     public BinaryTree<E> cloneBinaryTree()
     {
         BinaryTreeNode<E> root = this.getRoot();
@@ -221,20 +222,6 @@ public class BinaryTree<E> implements Cloneable {
     }
     
     public static void chargeAnswers(BinaryTree<String> treeQuestion, BinaryTree<String> animal, Queue<String> answers){
-        /*if(treeQuestion.getRight() == null || treeQuestion.getLeft() == null){
-            if(answers.poll().equals("si"))
-                treeQuestion.setRight(animal);
-            else
-                treeQuestion.setLeft(animal);
-            return;
-        }
-        else{
-            String answer = answers.poll();
-            if(answer.equals("si"))
-                chargeAnswers(treeQuestion.getRight(), animal, answers);
-            else
-                chargeAnswers(treeQuestion.getLeft(), animal, answers);
-        }*/
         BinaryTree<String> raizActual = treeQuestion;
         
         while (!answers.isEmpty()){
