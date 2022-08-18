@@ -5,8 +5,7 @@
  */
 package com.mycompany.modelo;
 
-import java.util.LinkedList;
-import com.mycompany.TDAS.*;
+import com.mycompany.TDAS.BinaryTree;
 
 
 /**
@@ -16,9 +15,14 @@ import com.mycompany.TDAS.*;
 public class Main {
     public static void main(String Args[]) throws CloneNotSupportedException{
 
-        BinaryTree<String> BinaryTreeQuestion = Partida.generarArbolJuego("documents/preguntasPrueba.txt", "documents/respuestasPrueba.txt");
+        Partida juegoActual = new Partida();
+
+        juegoActual.setPathPreguntas("documents/preguntasPrueba.txt");
+        juegoActual.setPathRespuestas("documents/respuestasPrueba.txt");
+
+        juegoActual.generarArbolJuego();
                 
-        Partida.empezarJuego(BinaryTreeQuestion);
+        juegoActual.empezarJuego();
         
        
     }
