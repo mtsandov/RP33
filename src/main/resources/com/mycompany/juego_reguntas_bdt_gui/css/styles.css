@@ -1,0 +1,37 @@
+
+
+#btnSi{
+    -fx-font-size: 22;
+    -fx-font-family: "Gill Sans MT";
+    -fx-text-fill: "black";
+    -fx-alignment: center;
+    -fx-background-color : #7cff8f;
+    -fx-background-radius: 22 22 22 22; 
+}
+
+.button
+{
+    -fx-font-size: 20;
+    -fx-font-family: "Lucida Sans Unicode";
+    -fx-text-fill: "black";
+    -fx-alignment: center;
+    -fx-background-color : #ffc5b0;
+    -fx-background-radius:  22 22 22 22; 
+}
+
+.button:hover
+{
+    -fx-background-color : #eeafaf;
+}
+
+.button:pressed
+{
+    -fx-background-color : #faaf87;
+}
+
+#principalPane{
+    -fx-background-image: url("www.google.com/search?q=fondo+selva+de+juego&tbm=isch&ved=2ahUKEwj4x5bj_NX5AhWDLN8KHRsNAeYQ2-cCegQIABAA&oq=fondo+selva+de+juego&gs_lcp=CgNpbWcQAzoECCMQJzoGCAAQHhAIUMAFWK8PYKURaABwAHgAgAGiAYgB0AiSAQMwLjeYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ");
+    -fx-background-repeat: no-repeat; 
+    -fx-background-size: 500 500; 
+    -fx-background-position: center center;
+}
