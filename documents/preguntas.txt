@@ -1,20 +1,20 @@
 Es este animal vertebrado?
-Es este animal invertebrado?
+//Es este animal invertebrado?
 Es este animal viviparo?
-Es este animal oviparo?
-Es este animal mamifero?
+//Es este animal oviparo?
+//Es este animal mamifero?
 Es este animal un ave?
 Es este animal un pez?
 Es este animal nocturno?
 Es este animal diurno?
 Es este animal carnivoro?
-Es este animal herbivoro?
-Es este animal omnivoro?
+//Es este animal herbivoro?
+//Es este animal omnivoro?
 Este animal cuenta con plumas?
 Este animal cuenta con escamas?
 Este animal cuenta con aletas?
 Este animal es volador?
-Este animal es acuàtico?
+//Este animal es acuàtico?
 Este animal se arrastra?
 Se para este animal sobre cuatro patas?
 Se para este animal sobre dos patas?

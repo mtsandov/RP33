@@ -161,7 +161,119 @@ public class Partida {
         sc.close();
     }
     
+    public void empezarJuego2(){
+        System.out.println("////////////////////////  ADIVINA EL ANIMAL  ////////////////////////");
+        System.out.println("\nA continuación se le mostrará una serie de preguntas a la cuales deberá responder con Si o No\n");
+
+        Queue<String> colaPreguntas= new LinkedList<>();
+        Queue<String> colaRespuestas= new LinkedList<>();
+        
+        BinaryTree<String> arbolActual = this.preguntas;
+        boolean gameOver= false;
+        Scanner sc = new Scanner(System.in);
+         
+        System.out.println("Ingrese el numero de preguntas que desea hacer: ");
+        int intentosPermitidos= sc.nextInt();
+        sc.nextLine();
+        
+        int intento=1;
+        
+        while(intento<=intentosPermitidos){
+            
+            
+            System.out.println(arbolActual.getRootContent());
+            colaPreguntas.offer(arbolActual.getRootContent());
+            
+            System.out.println("Ingrese su respuesta: ");
+            String resp = sc.nextLine().toLowerCase();
+            respuestasUser.offer(resp);
+
+            if(resp.equals("si")){
+                colaRespuestas.offer("Si");
+
+                if(arbolActual.getRight()==null){
+                    System.out.println("\nNo se ha encontrado un animal de tales características\n");
+                    System.out.println("//////////////////////// GAME OVER ////////////////////////");
+                    System.out.println("Porfavor escriba el animal en que estaba pensando: ");
+                    this.setAnimalUser(sc.nextLine());
+                    animalUser = animalUser.replaceFirst(String.valueOf(animalUser.charAt(0)), String.valueOf(animalUser.charAt(0)).toUpperCase());
+                    System.out.println(this.getAnimalUser());
+                    this.addAnimalToTxt(animalUser, this.respuestasUser);
+                    gameOver=true;
+                }else{
+                    arbolActual=arbolActual.getRight();
+                    //intento++;
+                }
+            }else{
+                
+                colaRespuestas.offer("No");
+
+                if(arbolActual.getLeft()==null){
+                    System.out.println("\nNo se ha encontrado un animal de tales características\n");
+                    System.out.println("//////////////////////// GAME OVER ////////////////////////");
+                    System.out.println("Porfavor escriba el animal en que estaba pensando: ");
+                    System.out.println("¿Qué animal era?       Aprendiendo...:|");
+                    this.setAnimalUser(sc.nextLine());
+                    animalUser = animalUser.replaceFirst(String.valueOf(animalUser.charAt(0)), String.valueOf(animalUser.charAt(0)).toUpperCase());
+                    System.out.println(this.getAnimalUser());
+                    this.addAnimalToTxt(animalUser, this.respuestasUser);
+                    gameOver=true;
+                }else{
+                    arbolActual=arbolActual.getLeft();
+                    //intento++;
+                }
+            }
+
+            
+            if(arbolActual.isLeaf()){
+                System.out.println("\n¡El animal que estás pensando es un "+arbolActual.getRootContent()+"!\n");
+                System.out.println("//////////////////////// GAME OVER ////////////////////////");
+                gameOver=true;
+            }
+            
+            intento++;
+            
+        }
+        
+        if(intento>intentosPermitidos && gameOver==false){
+
+            listaPosiblesAnimales(arbolActual);
+
+        }
+        
+        mostrarInforme(colaPreguntas,colaRespuestas);
+        
+        
+        
+    }
     
+    public void listaPosiblesAnimales(BinaryTree<String> arbol){
+        
+         System.out.println("\nSE HA AGOTADO EL INTENTO DE PREGUNTAS QUE INGRESO\n");
+            
+            LinkedList<String> listaPosiblesAnimales=arbol.breadthTraversalLeaf();
+            
+            if(!listaPosiblesAnimales.isEmpty()){
+                
+                System.out.println("\n////////////////////LISTA DE POSIBLES ANIMALES////////////////////\n");
+                
+                for(String s:listaPosiblesAnimales){
+                    System.out.println(s);
+                }
+            }
+        
+    }
+    
+    public void mostrarInforme(Queue<String> preguntas, Queue<String> respuestas){
+        System.out.println("\n////////////////////INFORME DE LA PARTIDA////////////////////\n");
+        
+        while(preguntas.peek()!=null && respuestas.peek()!=null){
+            System.out.println("//////////");
+            System.out.println("PREGUNTA:   "+preguntas.poll());
+            System.out.println("RESPUESTA DADA:   "+respuestas.poll());
+        }
+        
+    }
 
 
 

@@ -2,4 +2,3 @@ Oso si si si
 Lechuza no si no
 Venado si no si
 Paloma no no no
-Rana no no si 

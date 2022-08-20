@@ -152,5 +152,31 @@ public class BinaryTree<E> implements Cloneable {
         }
         return traversal;
     }
+    
+    public LinkedList<E> breadthTraversalLeaf() {
+        LinkedList<E> traversal = new LinkedList<>();
+        Queue<BinaryTree<E>> q = new LinkedList<>();
+        q.offer(this);
+        while (!q.isEmpty()) {
+            BinaryTree<E> tree = q.poll();
+            if (!tree.isEmpty()) {
+                
+                if(tree.isLeaf()){
+                    traversal.add(tree.getRootContent());
+                }
+                
+                //traversal.add(tree.getRootContent());
+            }
+            if (tree.getLeft() != null && !tree.getLeft().isEmpty()) {
+                
+                
+                q.offer(tree.getLeft());
+            }
+            if (tree.getRight()!= null && !tree.getRight().isEmpty()) {
+                q.offer(tree.getRight());
+            }
+        }
+        return traversal;
+    }
 
 }

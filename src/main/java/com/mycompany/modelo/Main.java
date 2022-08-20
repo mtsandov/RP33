@@ -22,7 +22,7 @@ public class Main {
 
         juegoActual.generarArbolJuego();
                 
-        juegoActual.empezarJuego();
+        juegoActual.empezarJuego2();
         
        
     }
