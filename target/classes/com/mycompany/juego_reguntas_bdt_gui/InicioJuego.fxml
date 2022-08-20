@@ -5,14 +5,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" spacing="95.0" stylesheets="@../../../../../../documents/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" spacing="95.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.juego_reguntas_bdt_gui.InicioJuegoController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="93.0" prefWidth="815.0" text="¿En qué animal estás pensando?">
          <font>
             <Font size="48.0" />
          </font>
       </Label>
-      <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="272.0" text="Jugar" />
+      <Button mnemonicParsing="false" onAction="#empezarPartida" prefHeight="47.0" prefWidth="272.0" text="Iniciar Partida" />
       <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="276.0" text="Archivo preguntas" />
       <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="282.0" text="Archivo respuestas" />
    </children>

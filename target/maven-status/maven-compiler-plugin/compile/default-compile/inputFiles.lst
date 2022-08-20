@@ -1,8 +1,15 @@
 /Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/App.java
-/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/modelo/Partida.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/TDAS/List.java
 /Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/module-info.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/TDAS/EmptyListException.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/TDAS/CircularDoubleLinkedList.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/TDAS/CircularDoubleNodeList.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/modelo/Partida.java
 /Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/modelo/Main.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/EmpezarPartidaController.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/PreguntasController.java
 /Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/utilidades/Utilidades.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/InicioJuegoController.java
 /Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/modelo/Animal.java
 /Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/TDAS/BinaryTree.java
 /Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/SecondaryController.java
