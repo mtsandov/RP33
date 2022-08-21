@@ -9,17 +9,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.juego_reguntas_bdt_gui.GanaPartidaController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1080.0" opacity="0.54">
          <image>
-            <Image url="@../../../GitHub/Juego_preguntas_BDT/src/main/resources/com/mycompany/juego_reguntas_bdt_gui/images/fondo4.jpg" />
+            <Image url="@images/fondo4.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="325.0" fitWidth="615.0" layoutX="35.0" layoutY="330.0">
          <image>
-            <Image url="@../../../GitHub/Juego_preguntas_BDT/src/main/resources/com/mycompany/juego_reguntas_bdt_gui/images/genio3.png" />
+            <Image url="@images/genio3.png" />
          </image>
       </ImageView>
       <Label layoutX="116.0" layoutY="63.0" prefHeight="57.0" prefWidth="686.0" text="¡El animal que estás pensando es un..." textFill="WHITE">
@@ -43,12 +42,12 @@
          <children>
             <ImageView fitHeight="40.0" fitWidth="200.0">
                <image>
-                  <Image url="@../../../GitHub/Juego_preguntas_BDT/src/main/resources/com/mycompany/juego_reguntas_bdt_gui/images/game_over-removebg-preview.png" />
+                  <Image url="@images/game_over-removebg-preview.png" />
                </image>
             </ImageView>
-            <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="134.0" text="Informe Partida" />
-            <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="130.0" text="Jugar " />
-            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" text="Salir" />
+            <Button mnemonicParsing="false" onAction="#mostrarInforme" prefHeight="36.0" prefWidth="134.0" text="Informe Partida" />
+            <Button mnemonicParsing="false" onAction="#jugarDeNuevo" prefHeight="33.0" prefWidth="130.0" text="Jugar " />
+            <Button mnemonicParsing="false" onAction="#salir" prefHeight="30.0" prefWidth="130.0" text="Salir" />
          </children>
       </VBox>
    </children>

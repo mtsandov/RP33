@@ -11,20 +11,20 @@ import javafx.fxml.Initializable;
 
 
 public class InicioJuegoController implements Initializable {
-    
-    //static int intentosPermitidos;
 
-
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // 
+        // TODO
     }    
-
+    
     @FXML
     private void empezarPartida(ActionEvent event) throws IOException {
         
         App.setRoot("empezarPartida");
-        //int n=EmpezarPartidaController.intentosPermitidos;
+        
         
     }
     

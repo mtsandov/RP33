@@ -4,28 +4,23 @@
  */
 package com.mycompany.juego_reguntas_bdt_gui;
 
-import com.mycompany.juego_reguntas_bdt_gui.App;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
+import javafx.scene.image.ImageView;
+/**
+ * FXML Controller class
+ *
+ * @author diegomartinez
+ */
+public class GanaPartidaController implements Initializable {
 
 
-public class EmpezarPartidaController implements Initializable {
-
-    static int intentosPermitidos;
     @FXML
-    private Pane principalPane;
-    @FXML
-    private TextField cantPreguntas;
-    @FXML
-    private Button btnIniciar;
+    private ImageView imgAnimal;
     /**
      * Initializes the controller class.
      */
@@ -35,9 +30,15 @@ public class EmpezarPartidaController implements Initializable {
     }    
     
     @FXML
-    private void comenzarPartida(ActionEvent event) throws IOException {
-        intentosPermitidos=Integer.parseInt(cantPreguntas.getText());
-        App.setRoot("preguntas");
+    private void mostrarInforme(ActionEvent event) {
+    }
+
+    @FXML
+    private void jugarDeNuevo(ActionEvent event) {
+    }
+
+    @FXML
+    private void salir(ActionEvent event) {
     }
 
 }

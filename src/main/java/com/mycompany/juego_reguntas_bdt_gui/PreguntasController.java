@@ -2,12 +2,10 @@
 package com.mycompany.juego_reguntas_bdt_gui;
 
 import com.mycompany.TDAS.BinaryTree;
+import com.mycompany.juego_reguntas_bdt_gui.EmpezarPartidaController;
 import com.mycompany.modelo.Partida;
 import java.net.URL;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,11 +21,9 @@ public class PreguntasController implements Initializable {
     
     static BinaryTree<String> arbolActual;
     static int intentos=1;
-    
-
 
     @FXML
-    private Label preguntas;
+    private Label lblPregunta;
     @FXML
     private Button btnSi;
     @FXML
@@ -46,13 +42,12 @@ public class PreguntasController implements Initializable {
         juegoActual.generarArbolJuego();
         arbolActual=juegoActual.getPreguntas();
                 
-        preguntas.setText(arbolActual.getRootContent());
-        
-        
+        lblPregunta.setText(arbolActual.getRootContent());
     }    
-
+    
     @FXML
     private void botonYes(ActionEvent event) {
+        
         if(arbolActual.getRight()==null){
             System.out.println("\nNo se ha encontrado un animal de tales características\n");
             System.out.println("//////////////////////// GAME OVER ////////////////////////");
@@ -61,7 +56,7 @@ public class PreguntasController implements Initializable {
         }else{
             
             arbolActual=arbolActual.getRight();
-            preguntas.setText(arbolActual.getRootContent());
+            lblPregunta.setText(arbolActual.getRootContent());
         }
         
         if(arbolActual.isLeaf()){
@@ -79,7 +74,6 @@ public class PreguntasController implements Initializable {
             listaPosiblesAnimales(arbolActual);
 
         }
-        
     }
 
     @FXML
@@ -92,7 +86,7 @@ public class PreguntasController implements Initializable {
         }else{
             
             arbolActual=arbolActual.getLeft();
-            preguntas.setText(arbolActual.getRootContent());
+            lblPregunta.setText(arbolActual.getRootContent());
         }
         if(arbolActual.isLeaf()){
                 System.out.println("\n¡El animal que estás pensando es un "+arbolActual.getRootContent()+"!\n");
@@ -109,17 +103,12 @@ public class PreguntasController implements Initializable {
             listaPosiblesAnimales(arbolActual);
 
         }
-        
     }
-
+    
     private void listaPosiblesAnimales(BinaryTree<String> arbolActual) {
         //MUESTRA UNA VENTANA CON LOS POSIBLES ANIMALES CUANDO SE ACABARON LOS INTENTOS
         //posiblesAnimales.fxml
         System.out.println("INTENTOS ACABADOS");
     }
-    
-    
-    
-    
-    
+
 }
