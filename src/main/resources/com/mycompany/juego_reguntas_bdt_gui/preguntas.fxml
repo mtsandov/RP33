@@ -6,19 +6,33 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.juego_reguntas_bdt_gui.PreguntasController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="preguntas" layoutX="325.0" layoutY="107.0" prefHeight="78.0" prefWidth="472.0" text="Pregunta" />
-      <HBox alignment="CENTER" layoutX="444.0" layoutY="290.0" prefHeight="200.0" prefWidth="553.0" spacing="60.0">
+      <ImageView fitHeight="720.0" fitWidth="1080.0" opacity="0.54">
+         <image>
+            <Image url="@../Documents/GitHub/Juego_preguntas_BDT/src/main/resources/com/mycompany/juego_reguntas_bdt_gui/images/fondo3.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="720.0" fitWidth="1080.0" opacity="0.54" visible="false">
+         <image>
+            <Image url="@../Pictures/fodo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblPregunta" layoutX="373.0" layoutY="148.0" prefHeight="78.0" prefWidth="472.0" text="Pregunta" textFill="#0a0000">
+         <font>
+            <Font name="Dubai Medium" size="20.0" />
+         </font></Label>
+      <HBox alignment="CENTER" layoutX="530.0" layoutY="277.0" prefHeight="158.0" prefWidth="480.0" spacing="60.0">
          <children>
-            <Button fx:id="btnSi" mnemonicParsing="false" onAction="#botonYes" prefHeight="69.0" prefWidth="126.0" text="Si" />
-            <Button fx:id="btnNo" mnemonicParsing="false" onAction="#botonNo" prefHeight="69.0" prefWidth="126.0" text="No" />
+            <Button fx:id="btnSi" mnemonicParsing="false" prefHeight="69.0" prefWidth="126.0" text="Si" />
+            <Button fx:id="btnNo" mnemonicParsing="false" prefHeight="69.0" prefWidth="126.0" text="No" />
          </children>
       </HBox>
-      <ImageView fitHeight="399.0" fitWidth="371.0" layoutX="90.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="399.0" fitWidth="371.0" layoutX="159.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/genio2.jpeg" />
+            <Image url="@../Documents/GitHub/Juego_preguntas_BDT/src/main/resources/com/mycompany/juego_reguntas_bdt_gui/images/genio2.png" />
          </image>
       </ImageView>
    </children>

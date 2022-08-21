@@ -10,31 +10,40 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="principalPane" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.juego_reguntas_bdt_gui.EmpezarPartidaController">
+<Pane fx:id="principalPane" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox alignment="CENTER" layoutX="200.0" layoutY="37.0" prefHeight="619.0" prefWidth="751.0" spacing="80.0">
+      <ImageView fitHeight="720.0" fitWidth="1080.0" opacity="0.76">
+         <image>
+            <Image url="@../Documents/GitHub/Juego_preguntas_BDT/src/main/resources/com/mycompany/juego_reguntas_bdt_gui/images/fondo2.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="233.0" layoutY="118.0" prefHeight="485.0" prefWidth="634.0" spacing="50.0">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="39.0" prefWidth="697.0" text="Ingrese la cantidad de preguntas que desea hacer">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="39.0" prefWidth="523.0" text="Ingrese la cantidad de preguntas que desea" textAlignment="JUSTIFY">
                <font>
                   <Font name="Lucida Sans Unicode" size="22.0" />
                </font>
             </Label>
             <TextField fx:id="cantPreguntas" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="62.0" prefWidth="77.0" />
-            <HBox maxWidth="-Infinity" prefHeight="168.0" prefWidth="616.0" spacing="50.0">
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="135.0" prefWidth="616.0" spacing="50.0">
                <children>
                   <Label alignment="CENTER" prefHeight="168.0" prefWidth="355.0" text="Ahora piensa en un animal...">
                      <font>
                         <Font name="Lucida Sans Unicode" size="24.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="168.0" fitWidth="140.0">
+                  <ImageView fitHeight="145.0" fitWidth="129.0">
                      <image>
-                        <Image url="@images/genio.jpg" />
+                        <Image url="@../Documents/GitHub/Juego_preguntas_BDT/src/main/resources/com/mycompany/juego_reguntas_bdt_gui/images/genio1.gif" />
                      </image>
                   </ImageView>
                </children>
             </HBox>
-            <Button fx:id="btnIniciar" mnemonicParsing="false" onAction="#comenzarPartida" prefHeight="47.0" prefWidth="182.0" text="Jugar" />
+            <Button fx:id="btnIniciar" mnemonicParsing="false" opacity="0.67" prefHeight="47.0" prefWidth="182.0" text="Jugar" textFill="#0d0000">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
          </children>
       </VBox>
    </children>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1080.0" opacity="0.54">
+         <image>
+            <Image url="@../../../GitHub/Juego_preguntas_BDT/src/main/resources/com/mycompany/juego_reguntas_bdt_gui/images/fondo4.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="325.0" fitWidth="615.0" layoutX="35.0" layoutY="330.0">
+         <image>
+            <Image url="@../../../GitHub/Juego_preguntas_BDT/src/main/resources/com/mycompany/juego_reguntas_bdt_gui/images/genio3.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="116.0" layoutY="63.0" prefHeight="57.0" prefWidth="686.0" text="¡El animal que estás pensando es un..." textFill="WHITE">
+         <font>
+            <Font name="Kristen ITC" size="36.0" />
+         </font>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" />
+         </effect>
+      </Label>
+      <ImageView fx:id="imgAnimal" fitHeight="225.0" fitWidth="356.0" layoutX="488.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true" />
+      <Label alignment="CENTER" layoutX="591.0" layoutY="141.0" prefHeight="57.0" prefWidth="150.0" text="animal" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Gill Sans MT Bold Italic" size="24.0" />
+         </font>
+         <effect>
+            <DropShadow height="39.66" radius="26.3275" width="67.65" />
+         </effect>
+      </Label>
+      <VBox alignment="CENTER" layoutX="714.0" layoutY="438.0" prefHeight="225.0" prefWidth="292.0" spacing="20.0">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../../../GitHub/Juego_preguntas_BDT/src/main/resources/com/mycompany/juego_reguntas_bdt_gui/images/game_over-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="134.0" text="Informe Partida" />
+            <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="130.0" text="Jugar " />
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" text="Salir" />
+         </children>
+      </VBox>
+   </children>
+</Pane>
