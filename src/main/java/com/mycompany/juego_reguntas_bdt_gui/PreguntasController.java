@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+
 package com.mycompany.juego_reguntas_bdt_gui;
 
 import com.mycompany.TDAS.BinaryTree;
@@ -25,6 +22,8 @@ import javafx.scene.control.Label;
 public class PreguntasController implements Initializable {
     
     static BinaryTree<String> arbolActual;
+    static int intentos=1;
+    
 
 
     @FXML
@@ -47,7 +46,7 @@ public class PreguntasController implements Initializable {
         juegoActual.generarArbolJuego();
         arbolActual=juegoActual.getPreguntas();
                 
-        preguntas.setText(juegoActual.getPreguntas().getRootContent());
+        preguntas.setText(arbolActual.getRootContent());
         
         
     }    
@@ -64,6 +63,23 @@ public class PreguntasController implements Initializable {
             arbolActual=arbolActual.getRight();
             preguntas.setText(arbolActual.getRootContent());
         }
+        
+        if(arbolActual.isLeaf()){
+                System.out.println("\n¡El animal que estás pensando es un "+arbolActual.getRootContent()+"!\n");
+                System.out.println("//////////////////////// GAME OVER ////////////////////////");
+                //SALTA A OTRA PANTALLA MOSTRANDO EL ANIMAL ADIVINADO
+                //animalAdivinado.fxml
+                //gameOver=true;
+            }
+        
+        intentos++;
+        
+        if(intentos>EmpezarPartidaController.intentosPermitidos ){
+
+            listaPosiblesAnimales(arbolActual);
+
+        }
+        
     }
 
     @FXML
@@ -78,6 +94,28 @@ public class PreguntasController implements Initializable {
             arbolActual=arbolActual.getLeft();
             preguntas.setText(arbolActual.getRootContent());
         }
+        if(arbolActual.isLeaf()){
+                System.out.println("\n¡El animal que estás pensando es un "+arbolActual.getRootContent()+"!\n");
+                System.out.println("//////////////////////// GAME OVER ////////////////////////");
+                //SALTA A OTRA PANTALLA MOSTRANDO EL ANIMAL ADIVINADO
+                //animalAdivinado.fxml
+                //gameOver=true;
+            }
+        
+        intentos++;
+        
+        if(intentos>EmpezarPartidaController.intentosPermitidos){
+
+            listaPosiblesAnimales(arbolActual);
+
+        }
+        
+    }
+
+    private void listaPosiblesAnimales(BinaryTree<String> arbolActual) {
+        //MUESTRA UNA VENTANA CON LOS POSIBLES ANIMALES CUANDO SE ACABARON LOS INTENTOS
+        //posiblesAnimales.fxml
+        System.out.println("INTENTOS ACABADOS");
     }
     
     

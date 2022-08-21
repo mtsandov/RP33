@@ -47,6 +47,8 @@ public class EmpezarPartidaController implements Initializable {
     @FXML
     private void comenzarPartida(ActionEvent event) throws IOException {
         intentosPermitidos=Integer.parseInt(cantPreguntas.getText());
+        
+        /*
         CircularDoubleLinkedList<String> lista = new CircularDoubleLinkedList();
         //LinkedList<String> lista= new LinkedList();
         lista.addFirst("quinto");
@@ -72,6 +74,7 @@ public class EmpezarPartidaController implements Initializable {
         System.out.println(it.previous());
         //System.out.println(it.previous());
         //System.out.println(it.previous());
+        */
         App.setRoot("preguntas");
         
         
