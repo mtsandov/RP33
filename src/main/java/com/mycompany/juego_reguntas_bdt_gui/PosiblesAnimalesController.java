@@ -4,6 +4,7 @@
  */
 package com.mycompany.juego_reguntas_bdt_gui;
 
+import com.mycompany.TDAS.BinaryTree;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -19,6 +20,8 @@ import javafx.scene.image.ImageView;
  * @author diegomartinez
  */
 public class PosiblesAnimalesController implements Initializable {
+    
+    static BinaryTree<String> arbolAnimales;
 
 
     @FXML

@@ -141,10 +141,11 @@ public class PreguntasController implements Initializable {
         }
     }
     
-    private void listaPosiblesAnimales(BinaryTree<String> arbolActual) {
+    private void listaPosiblesAnimales(BinaryTree<String> arbolActual) throws IOException {
         //MUESTRA UNA VENTANA CON LOS POSIBLES ANIMALES CUANDO SE ACABARON LOS INTENTOS
         //posiblesAnimales.fxml
         System.out.println("INTENTOS ACABADOS");
+        App.setRoot("posiblesAnimales");
     }
 
 }
