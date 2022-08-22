@@ -41,7 +41,8 @@ public class GanaPartidaController implements Initializable {
     }    
     
     @FXML
-    private void mostrarInforme(ActionEvent event) {
+    private void mostrarInforme(ActionEvent event) throws IOException {
+        App.setRoot("informePartida");
     }
 
     @FXML

@@ -57,9 +57,14 @@ public class PreguntasController implements Initializable {
             App.setRoot("pierdePartida");
                     
         }else{
-            
+            //Partida.respuestasCola.add("Si");
+            //Partida.preguntasCola.add(arbolActual.getRootContent());
+            InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
+            InformePartidaController.respuestasCola.offer("Si");
             arbolActual=arbolActual.getRight();
             lblPregunta.setText(arbolActual.getRootContent());
+            
+            
         }
         
         if(arbolActual.isLeaf()){
@@ -99,9 +104,13 @@ public class PreguntasController implements Initializable {
             App.setRoot("pierdePartida");
                     
         }else{
-            
+            //Partida.respuestasCola.add("No");
+            //Partida.preguntasCola.add(arbolActual.getRootContent());
+            InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
+            InformePartidaController.respuestasCola.offer("No");
             arbolActual=arbolActual.getLeft();
             lblPregunta.setText(arbolActual.getRootContent());
+            
         }
         if(arbolActual.isLeaf()){
                 System.out.println("\n¡El animal que estás pensando es un "+arbolActual.getRootContent()+"!\n");

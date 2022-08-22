@@ -19,10 +19,31 @@ public class Partida {
     String animalUser;
     String pathPreguntas;
     String pathRespuestas;
+    
+    
+    //public static LinkedList<String> respuestasCola=new LinkedList<>();
+    //public static LinkedList<String> preguntasCola=new LinkedList<>();
 
     public Partida(){
 
     }
+    /*
+    public void aggRespuesta(String resp){
+        respuestasCola.add(resp);
+    } 
+    public void aggPregunta(String preg){
+        preguntasCola.add(preg);
+    } 
+
+    public static LinkedList<String> getRespuestasCola() {
+        return respuestasCola;
+    }
+
+    public static LinkedList<String> getPreguntasCola() {
+        return preguntasCola;
+    }*/
+    
+    
 
     public Partida(BinaryTree<String> preguntas) {
         this.preguntas = preguntas;
