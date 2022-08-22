@@ -4,6 +4,7 @@
  */
 package com.mycompany.juego_reguntas_bdt_gui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -39,7 +40,8 @@ public class InformePartidaController implements Initializable {
     }
 
     @FXML
-    private void salir(ActionEvent event) {
+    private void salir(ActionEvent event) throws IOException {
+        App.setRoot("InicioJuego");
     }
     
 }

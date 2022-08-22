@@ -3,7 +3,9 @@ package com.mycompany.juego_reguntas_bdt_gui;
 
 import com.mycompany.TDAS.BinaryTree;
 import com.mycompany.juego_reguntas_bdt_gui.EmpezarPartidaController;
+import com.mycompany.modelo.Animal;
 import com.mycompany.modelo.Partida;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -46,12 +48,13 @@ public class PreguntasController implements Initializable {
     }    
     
     @FXML
-    private void botonYes(ActionEvent event) {
+    private void botonYes(ActionEvent event) throws IOException {
         
         if(arbolActual.getRight()==null){
             System.out.println("\nNo se ha encontrado un animal de tales características\n");
             System.out.println("//////////////////////// GAME OVER ////////////////////////");
             System.out.println("Porfavor escriba el animal en que estaba pensando: ");
+            App.setRoot("pierdePartida");
                     
         }else{
             
@@ -65,6 +68,16 @@ public class PreguntasController implements Initializable {
                 //SALTA A OTRA PANTALLA MOSTRANDO EL ANIMAL ADIVINADO
                 //animalAdivinado.fxml
                 //gameOver=true;
+                
+                //INTERFAZ
+                Animal.cargarAnimales();
+                for(Animal a:Animal.getAnimales()){
+                    if(arbolActual.getRootContent().equals(a.getNombre())){
+                        GanaPartidaController.animalEncontrado=a;
+                    }
+                }
+                
+                App.setRoot("ganaPartida");
             }
         
         intentos++;
@@ -77,11 +90,13 @@ public class PreguntasController implements Initializable {
     }
 
     @FXML
-    private void botonNo(ActionEvent event) {
-        if(arbolActual.getRight()==null){
+    private void botonNo(ActionEvent event) throws IOException {
+        if(arbolActual.getLeft()==null){
             System.out.println("\nNo se ha encontrado un animal de tales características\n");
             System.out.println("//////////////////////// GAME OVER ////////////////////////");
             System.out.println("Porfavor escriba el animal en que estaba pensando: ");
+            //INTERFAZ
+            App.setRoot("pierdePartida");
                     
         }else{
             
@@ -94,6 +109,18 @@ public class PreguntasController implements Initializable {
                 //SALTA A OTRA PANTALLA MOSTRANDO EL ANIMAL ADIVINADO
                 //animalAdivinado.fxml
                 //gameOver=true;
+                //INTERFAZ
+                
+                Animal.cargarAnimales();
+                for(Animal a:Animal.getAnimales()){
+                    if(arbolActual.getRootContent().equals(a.getNombre())){
+                        GanaPartidaController.animalEncontrado=a;
+                    }
+                }
+                
+                App.setRoot("ganaPartida");
+                
+                
             }
         
         intentos++;

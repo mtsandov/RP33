@@ -1,18 +1,22 @@
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\juego_reguntas_bdt_gui\InicioJuegoController.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\utilidades\Utilidades.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\module-info.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\TDAS\BinaryTreeNode.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\TDAS\CircularDoubleLinkedList.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\modelo\Partida.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\TDAS\BinaryTree.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\juego_reguntas_bdt_gui\SecondaryController.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\modelo\Main.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\juego_reguntas_bdt_gui\GanaPartidaController.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\TDAS\List.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\modelo\Animal.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\TDAS\CircularDoubleNodeList.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\TDAS\EmptyListException.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\juego_reguntas_bdt_gui\App.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\juego_reguntas_bdt_gui\PrimaryController.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\juego_reguntas_bdt_gui\EmpezarPartidaController.java
-C:\Users\Meiyin Chang\Documents\GitHub\Juego_preguntas_BDT\src\main\java\com\mycompany\juego_reguntas_bdt_gui\PreguntasController.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/App.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/TDAS/List.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/module-info.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/PosiblesAnimalesController.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/TDAS/EmptyListException.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/TDAS/CircularDoubleLinkedList.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/TDAS/CircularDoubleNodeList.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/InformePartidaController.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/modelo/Partida.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/PierdePartidaController.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/modelo/Main.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/EmpezarPartidaController.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/PreguntasController.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/utilidades/Utilidades.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/InicioJuegoController.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/modelo/Animal.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/NuevoAnimalController.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/TDAS/BinaryTree.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/SecondaryController.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/PrimaryController.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/TDAS/BinaryTreeNode.java
+/Users/diegomartinez/Documents/GitHub/Juego_preguntas_BDT/src/main/java/com/mycompany/juego_reguntas_bdt_gui/GanaPartidaController.java

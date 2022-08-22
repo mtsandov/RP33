@@ -30,7 +30,7 @@
          </effect>
       </Label>
       <ImageView fx:id="imgAnimal" fitHeight="225.0" fitWidth="356.0" layoutX="488.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true" />
-      <Label alignment="CENTER" layoutX="591.0" layoutY="141.0" prefHeight="57.0" prefWidth="150.0" text="animal" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="animalNombre" alignment="CENTER" layoutX="591.0" layoutY="141.0" prefHeight="57.0" prefWidth="150.0" text="animal" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Gill Sans MT Bold Italic" size="24.0" />
          </font>
