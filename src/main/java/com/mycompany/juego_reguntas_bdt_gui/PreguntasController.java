@@ -145,6 +145,7 @@ public class PreguntasController implements Initializable {
         //MUESTRA UNA VENTANA CON LOS POSIBLES ANIMALES CUANDO SE ACABARON LOS INTENTOS
         //posiblesAnimales.fxml
         System.out.println("INTENTOS ACABADOS");
+        PosiblesAnimalesController.arbolAnimales=arbolActual;
         App.setRoot("posiblesAnimales");
     }
 
