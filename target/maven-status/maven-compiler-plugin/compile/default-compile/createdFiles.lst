@@ -1,1 +1,5 @@
+com/mycompany/juego_reguntas_bdt_gui/InformePartidaController.class
+com/mycompany/juego_reguntas_bdt_gui/PosiblesAnimalesController.class
+com/mycompany/juego_reguntas_bdt_gui/PierdePartidaController.class
 module-info.class
+com/mycompany/juego_reguntas_bdt_gui/NuevoAnimalController.class

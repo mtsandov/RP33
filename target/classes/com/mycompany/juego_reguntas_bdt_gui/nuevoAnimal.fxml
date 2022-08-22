@@ -5,11 +5,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.juego_reguntas_bdt_gui.NuevoAnimalController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="720.0" opacity="0.62">
          <image>
@@ -24,8 +25,13 @@
                </font>
             </Label>
             <TextField fx:id="nombreAnimal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="187.0" />
-            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="39.0" prefWidth="187.0" text="Agregar imagen" />
-            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#guardar" prefHeight="37.0" prefWidth="101.0" text="Guardar" />
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+               <children>
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#agregarImagen" prefHeight="39.0" prefWidth="187.0" text="Agregar imagen" />
+                  <ImageView fx:id="imagenAnimal" fitHeight="44.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
+            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#guardarAnimal" prefHeight="37.0" prefWidth="101.0" text="Guardar" />
          </children>
       </VBox>
    </children>
