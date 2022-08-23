@@ -113,7 +113,7 @@ public class PosiblesAnimalesController implements Initializable {
         try {
              String fileName ="animales/"+ruta;//armar la ruta de la foto
 
-             System.out.println("FOTO RUTA"+fileName);
+            // System.out.println("FOTO RUTA"+fileName);
 
 
              //abrir el stream de la imagen de la persona
