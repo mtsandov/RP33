@@ -1,20 +1,20 @@
-¿Es este animal vivíparo?
-¿Es este animal un carnivoro?
-¿Se lo puede encontrar en granjas?
-¿Tu animal vive en un bosque?
-¿Tu animal puede volar?
-¿Tu animal nada?
-¿Tu animal es terrestre?
-¿Tu animal es un anfibio?
-¿Tu animal es un reptil?
-¿Es este animal un insecto?
-¿Este animal posee plumas?
-¿Este animal puede ser doméstico?
-¿Es considerado un animal peligroso?
-¿Es un ave?
-¿Tu animal es más alto que un hombre?
-¿Este animal tiene orejas?
-¿Tiene una trompa este animal?
-¿Este animal tiene 2 patas?
-¿Es un animal nocturno?
-¿Tu animal es de color marrón?
+Es este animal viviparo?
+Es este animal un carnivoro?
+Se lo puede encontrar en granjas?
+Tu animal vive en un bosque?
+Tu animal puede volar?
+Tu animal nada?
+Tu animal es terrestre?
+Tu animal es un anfibio?
+Tu animal es un reptil?
+Es este animal un insecto?
+Este animal posee plumas?
+Este animal puede ser domestico?
+Es considerado un animal peligroso?
+Es un ave?
+Tu animal es mas alto que un hombre?
+Este animal tiene orejas?
+Tiene una trompa este animal?
+Este animal tiene 2 patas?
+Es un animal nocturno?
+Tu animal es de color marron?
