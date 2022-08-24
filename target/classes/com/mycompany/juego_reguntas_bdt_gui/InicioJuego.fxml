@@ -26,9 +26,9 @@
                   <DropShadow blurType="GAUSSIAN" color="#3a8ad0" />
                </effect>
             </Label>
-            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="276.0" text="Archivo preguntas" />
-            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="282.0" text="Archivo respuestas" />
-            <Button mnemonicParsing="false" onAction="#empezarPartida" prefHeight="47.0" prefWidth="272.0" text="Jugar" />
+            <Button mnemonicParsing="false" onAction="#elegirPreguntas" prefHeight="47.0" prefWidth="276.0" text="Archivo preguntas" />
+            <Button fx:id="btnRespuestaFile" disable="true" mnemonicParsing="false" onAction="#elegirRespuestas" prefHeight="47.0" prefWidth="282.0" text="Archivo respuestas" />
+            <Button fx:id="btnJugar" disable="true" mnemonicParsing="false" onAction="#empezarPartida" prefHeight="47.0" prefWidth="272.0" text="Jugar" />
          </children>
       </VBox>
    </children>
