@@ -22,7 +22,7 @@ import javafx.scene.control.Label;
 public class PreguntasController implements Initializable {
     
     static BinaryTree<String> arbolActual;
-    static int intentos=1;
+    static int intentos=0;
 
     @FXML
     private Label lblPregunta;
@@ -51,10 +51,14 @@ public class PreguntasController implements Initializable {
     private void botonYes(ActionEvent event) throws IOException {
         
         if(arbolActual.getRight()==null){
-            System.out.println("\nNo se ha encontrado un animal de tales características\n");
-            System.out.println("//////////////////////// GAME OVER ////////////////////////");
-            System.out.println("Porfavor escriba el animal en que estaba pensando: ");
+            //System.out.println("\nNo se ha encontrado un animal de tales características\n");
+            //System.out.println("//////////////////////// GAME OVER ////////////////////////");
+            //System.out.println("Porfavor escriba el animal en que estaba pensando: ");
+            //pierdePartida();
+            System.out.println("Se perdio partida");
             App.setRoot("pierdePartida");
+            
+            //System.out.println("NO ENTRA A PIERDE PARTIDA");
                     
         }else{
             //Partida.respuestasCola.add("Si");
@@ -85,23 +89,36 @@ public class PreguntasController implements Initializable {
                 App.setRoot("ganaPartida");
             }
         
-        intentos++;
+        if(arbolActual.getRight()!=null){
+            intentos++;
+        }
+        //intentos++;
+        System.out.println("Numero intento: "+intentos);
+        System.out.println("Intentos Permitidos: "+EmpezarPartidaController.intentosPermitidos);
         
-        if(intentos>EmpezarPartidaController.intentosPermitidos ){
-
-            listaPosiblesAnimales(arbolActual);
+        
+        if(intentos==EmpezarPartidaController.intentosPermitidos ){
+            
+            System.out.println("INTENTOS ACABADOS");
+            PosiblesAnimalesController.arbolAnimales=arbolActual;
+            App.setRoot("posiblesAnimales");
+            //listaPosiblesAnimales(arbolActual);
 
         }
     }
 
     @FXML
-    private void botonNo(ActionEvent event) throws IOException {
+    private void botonNo(ActionEvent event) throws IOException  {
+        //App.setRoot("pierdePartida");
+        
         if(arbolActual.getLeft()==null){
-            System.out.println("\nNo se ha encontrado un animal de tales características\n");
-            System.out.println("//////////////////////// GAME OVER ////////////////////////");
-            System.out.println("Porfavor escriba el animal en que estaba pensando: ");
-            //INTERFAZ
+            //System.out.println("\nNo se ha encontrado un animal de tales características\n");
+            //System.out.println("//////////////////////// GAME OVER ////////////////////////");
+            //System.out.println("Porfavor escriba el animal en que estaba pensando: ");
+            System.out.println("Se perdio partida");
             App.setRoot("pierdePartida");
+            
+            //System.out.println("NO ENTRA A PIERDE PARTIDA");
                     
         }else{
             //Partida.respuestasCola.add("No");
@@ -127,18 +144,32 @@ public class PreguntasController implements Initializable {
                     }
                 }
                 
+            
                 App.setRoot("ganaPartida");
+            
                 
                 
             }
         
-        intentos++;
+        if(arbolActual.getLeft()!=null){
+            intentos++;
+        }
+        //intentos++;
+        System.out.println("Numero intento: "+intentos);
+        System.out.println("Intentos Permitidos: "+EmpezarPartidaController.intentosPermitidos);
         
-        if(intentos>EmpezarPartidaController.intentosPermitidos){
+        if(intentos==EmpezarPartidaController.intentosPermitidos){
+            
+            System.out.println("INTENTOS ACABADOS");
+            PosiblesAnimalesController.arbolAnimales=arbolActual;
+            App.setRoot("posiblesAnimales");
 
-            listaPosiblesAnimales(arbolActual);
+           
+               //listaPosiblesAnimales(arbolActual);
+            
 
         }
+        
     }
     
     private void listaPosiblesAnimales(BinaryTree<String> arbolActual) throws IOException {
@@ -147,6 +178,10 @@ public class PreguntasController implements Initializable {
         System.out.println("INTENTOS ACABADOS");
         PosiblesAnimalesController.arbolAnimales=arbolActual;
         App.setRoot("posiblesAnimales");
+    }
+    
+    private void pierdePartida() throws IOException{
+        App.setRoot("pierdePartida");
     }
 
 }
