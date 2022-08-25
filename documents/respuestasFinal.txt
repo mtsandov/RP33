@@ -1,13 +1,25 @@
 Oso si si no si no no si no no no no no si no si si no si no si
-Lechuza no no no si si no no no no no si no si si no no no si si no
+Lechuza no si no si si no no no no no si no si si no no no si si no
 Venado si no no si no no si no no no no no no no si si no no no si 
-Paloma no no no no si no no no no no si
-Elefante si no no no no no si no no no no no si no si si si
-Vaca 
-Caballo
-Jirafa
-hormiga
-msoquito
-cocodrilo
-canguro
-perro
+Paloma no no si no si no no no no no si
+Elefante si no no no no no si no no no no no si no si no si
+Vaca si no si no no no si no no no no no no no no si si no no no no
+Caballo si no si no no no si no no no no no no no si si no no no si
+Jirafa si no no no no no si no no no no no no no si no no no no no
+Hormiga no no si si no no si no no si 
+Mosca no no si si si no si no no si
+Cocodrilo no si no no no si si no si 
+Canguro si no no no no no si no no no no no si no si si no si no no
+Perro si si si no no no si no no no no si no no no si no no no si
+Conejo si no si si no no si no no no no si no no no si no no no si
+Leon si si no no no no si no no no no no si no no si no no no no
+Sapo no no si si no si si si
+Delfin si si no no no si no no no no no no no no no si no no no no
+Gallina no no si no si no si no no no si si no si 
+Avestruz si no si no no si si si no no no si no no no si si no no si
+Halcon no si no si si no no no no no si no si si no si no si si no
+Cangrejo no si no no no si si no no no no no no no no no no no no no
+Foca si si no no no si no no no no no no no no no no no no no si
+Tiburon no si no no no si no no no no no no si no no no no no si no
+Tortuga no no si no no si si no si no no si 
+Flamenco no si no no si si no no no no si no no si si 
