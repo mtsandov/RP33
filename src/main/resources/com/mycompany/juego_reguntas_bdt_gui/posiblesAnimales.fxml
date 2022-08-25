@@ -32,5 +32,6 @@
             <Button fx:id="btnNext" mnemonicParsing="false" onAction="#next" text="&gt;" />
          </children>
       </HBox>
+      <Button layoutX="897.0" layoutY="551.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
    </children>
 </Pane>
