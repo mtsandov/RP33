@@ -37,8 +37,7 @@ public class EmpezarPartidaController implements Initializable {
     
     @FXML
     private void comenzarPartida(ActionEvent event) throws IOException {
-        //CARGAMOS LA LISTA ESTATICA DE LOS ANIMALES
-        Animal.cargarAnimales();
+        
         //ESTABLECEMOS LOS INTENTOS PERMITIDOS PARA ESTA PARTIDA
         intentosPermitidos=Integer.parseInt(cantPreguntas.getText());
         App.setRoot("preguntas");

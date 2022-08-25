@@ -12,7 +12,7 @@ import java.util.LinkedList;
 public class Animal {
     String nombre;
     String path;
-    static LinkedList<Animal> animales=new LinkedList<>();
+    public static LinkedList<Animal> animales=new LinkedList<>();
 
     public Animal(String nombre, String path) {
         this.nombre = nombre;

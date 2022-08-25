@@ -47,13 +47,13 @@ public class PierdePartidaController implements Initializable {
     @FXML
     private void jugarDeNuevo(ActionEvent event) throws IOException {
         App.setRoot("empezarPartida");
-        PreguntasController.intentos=1;
+        App.resetearIntentosUsuario();
     }
 
     @FXML
     private void salir(ActionEvent event) throws IOException {
         App.setRoot("InicioJuego");
-         PreguntasController.intentos=1;
+        App.resetearIntentosUsuario();
     }
 
 }

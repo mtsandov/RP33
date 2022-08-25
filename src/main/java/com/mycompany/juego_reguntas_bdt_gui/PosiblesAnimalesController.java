@@ -48,20 +48,35 @@ public class PosiblesAnimalesController implements Initializable {
         // TODO
         
         LinkedList<String> lista=arbolAnimales.breadthTraversalLeaf();
+        
         for(String s:lista){
             System.out.println(s);
         }
         
-        //Animal.cargarAnimales();
+        
+        System.out.println("/////////////COMPROBACION LISTA ESTATICA ANIMALES CLASE/////////////");
+        for(Animal a:Animal.animales){
+            System.out.println(a.getNombre());
+        }
+        System.out.println("///////////////////////");
         
         //CircularDoubleLinkedList<Animal> animalesPosibles= new  CircularDoubleLinkedList();
         for(String s:lista){
-            for(Animal a:Animal.getAnimales()){
+            for(Animal a:Animal.animales){
                 if(s.equals(a.getNombre())){
+                    //if(!animalesPosibles.contains(a)){
+                      //  animalesPosibles.addLast(a);
+                    //}
                     animalesPosibles.addLast(a);
                 }
             }
         }
+        System.out.println("/////////////LISTA POSIBLES ANIMALES DE LA CIRCULAR LINKEDLIST/////////////");
+        for(Animal a:animalesPosibles){
+            System.out.println(a.getNombre());
+        }
+        System.out.println("///////////////////////");
+        
         if(!animalesPosibles.isEmpty()){
             setearImageView(animalesPosibles.get(0).getPath());
             nombreAnimal.setText(animalesPosibles.get(0).getNombre());
@@ -139,8 +154,8 @@ public class PosiblesAnimalesController implements Initializable {
     @FXML
     private void salir(ActionEvent event) throws IOException {
         App.setRoot("empezarPartida");
-        PreguntasController.intentos=1;
-        
+        App.resetearIntentosUsuario();
+        arbolAnimales=null;
     }
 
 }

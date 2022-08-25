@@ -2,6 +2,7 @@
 package com.mycompany.juego_reguntas_bdt_gui;
 
 import com.mycompany.juego_reguntas_bdt_gui.App;
+import com.mycompany.modelo.Animal;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -51,7 +52,8 @@ public class InicioJuegoController implements Initializable {
     
     @FXML
     private void empezarPartida(ActionEvent event) throws IOException {
-        
+        //CARGAMOS LA LISTA ESTATICA DE LOS ANIMALES
+        Animal.cargarAnimales();
         App.setRoot("empezarPartida");
         
         

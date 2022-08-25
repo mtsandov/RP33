@@ -45,5 +45,9 @@ public class App extends Application {
     alert.setContentText(mensaje);
     alert.showAndWait();
     }
+    
+    public static void resetearIntentosUsuario(){
+        PreguntasController.intentos=0;
+    }
 
 }

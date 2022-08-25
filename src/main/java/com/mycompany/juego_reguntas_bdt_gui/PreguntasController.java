@@ -22,7 +22,7 @@ import javafx.scene.control.Label;
 public class PreguntasController implements Initializable {
     
     static BinaryTree<String> arbolActual;
-    static int intentos=1;
+    static int intentos=0;
     static int pregunta=1;
     @FXML
     private Label lblPregunta;
@@ -50,22 +50,28 @@ public class PreguntasController implements Initializable {
     @FXML
     private void botonYes(ActionEvent event) throws IOException {
         
+        boolean gameOver=false;
+        
         System.out.println("PREGUNTA :"+pregunta);
         
         if(intentos==EmpezarPartidaController.intentosPermitidos){
             arbolActual=arbolActual.getRight();
-            System.out.println("Se perdio partida");
+            //System.out.println("Se perdio partida");
             App.setRoot("pierdePartida");
             
-            System.out.println("NO SE MANDO perdio partida");
-            System.out.println("tercero");
+            System.out.println("SE PERDIO POR LIMITE DE INTENTOS");
+            
             
             
         }else if(arbolActual.getRight()==null){
+            gameOver=true;
+            System.out.println("SE PERDIO POR ARBOL NULO");
             arbolActual=arbolActual.getRight();
             App.setRoot("pierdePartida");
+            
         }
         else if(arbolActual.getRight().isLeaf()){
+            gameOver=true;
             System.out.println("\n¡El animal que estás pensando es un "+arbolActual.getRight().getRootContent()+"!\n");
                 System.out.println("//////////////////////// GAME OVER ////////////////////////");
                 //SALTA A OTRA PANTALLA MOSTRANDO EL ANIMAL ADIVINADO
@@ -73,8 +79,8 @@ public class PreguntasController implements Initializable {
                 //gameOver=true;
                 
                 //INTERFAZ
-                Animal.cargarAnimales();
-                for(Animal a:Animal.getAnimales()){
+                
+                for(Animal a:Animal.animales){
                     if(arbolActual.getRight().getRootContent().equals(a.getNombre())){
                         GanaPartidaController.animalEncontrado=a;
                     }
@@ -99,6 +105,15 @@ public class PreguntasController implements Initializable {
         System.out.println("Intentos Permitidos: "+EmpezarPartidaController.intentosPermitidos);
         pregunta++;
         
+        
+        if(intentos==EmpezarPartidaController.intentosPermitidos && gameOver==false){
+            //arbolActual=arbolActual.getRight();
+            //System.out.println("Se perdio partida");
+            App.setRoot("pierdePartida");
+            
+            System.out.println("SE PERDIO POR LIMITE DE INTENTOS SEGUNDA VALIDACION");
+ 
+        }
         /*
         
         if(arbolActual.getRight()==null){
@@ -164,21 +179,25 @@ public class PreguntasController implements Initializable {
     @FXML
     private void botonNo(ActionEvent event) throws IOException  {
         //App.setRoot("pierdePartida");
+        boolean gameOver=false;
+        
         System.out.println("PREGUNTA :"+pregunta);
         if(intentos==EmpezarPartidaController.intentosPermitidos){
             arbolActual=arbolActual.getLeft();
-            System.out.println("Se perdio partida");
+            //System.out.println("Se perdio partida");
             App.setRoot("pierdePartida");
             
-            System.out.println("NO SE MANDO perdio partida");
-            System.out.println("tercero");
+            System.out.println("SE PERDIO POR LIMITE DE INTENTOS");
             
             
         }else if(arbolActual.getLeft()==null){
+            gameOver=true;
+             System.out.println("SE PERDIO POR ARBOL NULO");
             arbolActual=arbolActual.getLeft();
             App.setRoot("pierdePartida");
         }
         else if(arbolActual.getLeft().isLeaf()){
+            gameOver=true;
             System.out.println("\n¡El animal que estás pensando es un "+arbolActual.getLeft().getRootContent()+"!\n");
                 System.out.println("//////////////////////// GAME OVER ////////////////////////");
                 //SALTA A OTRA PANTALLA MOSTRANDO EL ANIMAL ADIVINADO
@@ -186,8 +205,8 @@ public class PreguntasController implements Initializable {
                 //gameOver=true;
                 
                 //INTERFAZ
-                Animal.cargarAnimales();
-                for(Animal a:Animal.getAnimales()){
+                //Animal.cargarAnimales();
+                for(Animal a:Animal.animales){
                     if(arbolActual.getLeft().getRootContent().equals(a.getNombre())){
                         GanaPartidaController.animalEncontrado=a;
                     }
@@ -213,7 +232,14 @@ public class PreguntasController implements Initializable {
         
         pregunta++;
         
-        
+        if(intentos==EmpezarPartidaController.intentosPermitidos && gameOver==false){
+            //arbolActual=arbolActual.getRight();
+            //System.out.println("Se perdio partida");
+            App.setRoot("pierdePartida");
+            
+            System.out.println("SE PERDIO POR LIMITE DE INTENTOS SEGUNDA VALIDACION");
+ 
+        }
         
         
         
