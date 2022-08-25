@@ -44,7 +44,7 @@ public class PreguntasController implements Initializable {
         //juegoActual.setPathPreguntas("documents/preguntasPrueba.txt");
         juegoActual.setPathPreguntas(InicioJuegoController.rutaPregs);
         //juegoActual.setPathRespuestas("documents/respuestasPrueba.txt");
-        juegoActual.setPathRespuestas(InicioJuegoController.rutaPregs);
+        juegoActual.setPathRespuestas(InicioJuegoController.rutaResp);
         juegoActual.generarArbolJuego();
         arbolActual=juegoActual.getPreguntas();
                 
