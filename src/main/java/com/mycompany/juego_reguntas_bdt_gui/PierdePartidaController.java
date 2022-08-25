@@ -4,12 +4,14 @@
  */
 package com.mycompany.juego_reguntas_bdt_gui;
 
+import static com.mycompany.juego_reguntas_bdt_gui.PreguntasController.arbolActual;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 
 /**
  * FXML Controller class
@@ -33,17 +35,25 @@ public class PierdePartidaController implements Initializable {
 
     @FXML
     private void mostrarInforme(ActionEvent event) throws IOException {
-        App.setRoot("informePartida");
+        //App.setRoot("informePartida");
+        if(PreguntasController.arbolActual==null){
+            App.showAlert(Alert.AlertType.INFORMATION, "No hay posibles animales que mostrar");
+        }else{
+            PosiblesAnimalesController.arbolAnimales=PreguntasController.arbolActual;
+            App.setRoot("posiblesAnimales");
+        }
     }
 
     @FXML
     private void jugarDeNuevo(ActionEvent event) throws IOException {
         App.setRoot("empezarPartida");
+        PreguntasController.intentos=1;
     }
 
     @FXML
     private void salir(ActionEvent event) throws IOException {
         App.setRoot("InicioJuego");
+         PreguntasController.intentos=1;
     }
 
 }

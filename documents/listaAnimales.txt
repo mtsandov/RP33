@@ -2,4 +2,3 @@ Oso,oso.jpg
 Lechuza,lechuza.jpg
 Venado,venado.jpg
 Paloma,paloma.jpg
-Diego,d-imagen-8.jpg
