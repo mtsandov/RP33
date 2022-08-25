@@ -61,6 +61,7 @@ public class PreguntasController implements Initializable {
             //System.out.println("NO ENTRA A PIERDE PARTIDA");
                     
         }else{
+            intentos++;
             //Partida.respuestasCola.add("Si");
             //Partida.preguntasCola.add(arbolActual.getRootContent());
             InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
@@ -90,7 +91,7 @@ public class PreguntasController implements Initializable {
             }
         
         if(arbolActual.getRight()!=null){
-            intentos++;
+            //intentos++;
         }
         //intentos++;
         System.out.println("Numero intento: "+intentos);
@@ -121,6 +122,7 @@ public class PreguntasController implements Initializable {
             //System.out.println("NO ENTRA A PIERDE PARTIDA");
                     
         }else{
+            intentos++;
             //Partida.respuestasCola.add("No");
             //Partida.preguntasCola.add(arbolActual.getRootContent());
             InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
@@ -152,7 +154,7 @@ public class PreguntasController implements Initializable {
             }
         
         if(arbolActual.getLeft()!=null){
-            intentos++;
+            //intentos++;
         }
         //intentos++;
         System.out.println("Numero intento: "+intentos);
