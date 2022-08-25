@@ -7,6 +7,8 @@ import com.mycompany.modelo.Animal;
 import com.mycompany.modelo.Partida;
 import java.io.IOException;
 import java.net.URL;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,6 +24,7 @@ import javafx.scene.control.Label;
 public class PreguntasController implements Initializable {
     
     static BinaryTree<String> arbolActual;
+    static Queue<String> respuestasUser = new LinkedList<>();
     static int intentos=0;
     static int pregunta=1;
     @FXML
@@ -38,9 +41,10 @@ public class PreguntasController implements Initializable {
         // TODO
         Partida juegoActual = new Partida();
 
-        juegoActual.setPathPreguntas("documents/preguntasPrueba.txt");
-        juegoActual.setPathRespuestas("documents/respuestasPrueba.txt");
-
+        //juegoActual.setPathPreguntas("documents/preguntasPrueba.txt");
+        juegoActual.setPathPreguntas(InicioJuegoController.rutaPregs);
+        //juegoActual.setPathRespuestas("documents/respuestasPrueba.txt");
+        juegoActual.setPathRespuestas(InicioJuegoController.rutaPregs);
         juegoActual.generarArbolJuego();
         arbolActual=juegoActual.getPreguntas();
                 
@@ -51,6 +55,8 @@ public class PreguntasController implements Initializable {
     private void botonYes(ActionEvent event) throws IOException {
         
         boolean gameOver=false;
+        
+        respuestasUser.offer("si");
         
         System.out.println("PREGUNTA :"+pregunta);
         
@@ -180,6 +186,8 @@ public class PreguntasController implements Initializable {
     private void botonNo(ActionEvent event) throws IOException  {
         //App.setRoot("pierdePartida");
         boolean gameOver=false;
+        
+        respuestasUser.offer("no");
         
         System.out.println("PREGUNTA :"+pregunta);
         if(intentos==EmpezarPartidaController.intentosPermitidos){

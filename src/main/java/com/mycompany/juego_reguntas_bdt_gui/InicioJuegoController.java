@@ -21,6 +21,11 @@ public class InicioJuegoController implements Initializable {
     private Button btnJugar;
     @FXML
     private Button btnRespuestaFile;
+    
+    public static String rutaPregs;
+    
+    public static String rutaResp;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -34,7 +39,8 @@ public class InicioJuegoController implements Initializable {
                 new FileChooser.ExtensionFilter("TXT", "*.txt"));
 
         File preguntasFile = fileChooser.showOpenDialog(null);
-        //System.out.println("file"+preguntasFile.getPath());
+        System.out.println("file: "+preguntasFile.getPath());
+        rutaPregs = preguntasFile.getPath();
         btnRespuestaFile.setDisable(false);
     }
     @FXML
@@ -45,7 +51,8 @@ public class InicioJuegoController implements Initializable {
                 new FileChooser.ExtensionFilter("TXT", "*.txt"));
 
         File respuestasFile = fileChooser.showOpenDialog(null);
-        //System.out.println("file"+respuestasFile.getPath());
+        System.out.println("file: "+respuestasFile.getPath());
+        rutaResp = respuestasFile.getPath();
         btnJugar.setDisable(false);
     }   
 

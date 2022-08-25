@@ -41,7 +41,9 @@ public class NuevoAnimalController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        while (!PreguntasController.respuestasUser.isEmpty()){
+            System.out.println(PreguntasController.respuestasUser.poll());
+        }
     }    
 
     @FXML
