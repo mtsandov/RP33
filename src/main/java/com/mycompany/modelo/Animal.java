@@ -1,6 +1,11 @@
 
 package com.mycompany.modelo;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.Collections;
 import java.util.LinkedList;
 
 
@@ -35,7 +40,7 @@ public class Animal {
     }
     
     
-    public static void cargarAnimales(){
+    public static void cargarAnimales2(){
         Animal a1 = new Animal("Oso", "oso.jpg");
         Animal a2 =  new Animal("Lechuza", "lechuza.jpg");
         Animal a3 = new Animal("Venado", "venado.jpg");
@@ -47,6 +52,32 @@ public class Animal {
         animales.add(a4);
     }
     
+    public static void cargarAnimales(){
+        try {
+            
+            FileReader entrada= new FileReader("documents/listaAnimales.txt");
+            BufferedReader buffer= new BufferedReader(entrada);
+            String linea="";
+            
+            while(linea!=null){
+                linea=buffer.readLine();
+                if(linea!=null){
+                    String[] datos = linea.split(",");
+                    String nombre= datos[0];
+                    String ruta=datos[1];
+                    Animal a = new Animal(nombre,ruta);
+                    animales.add(a);
+                
+                    
+                } 
+            }
+            
+            entrada.close();
+            buffer.close();
+        } catch (IOException ex) {
+            System.out.println("No se ha encontrado el archivo de animales: "+ex);
+        }
+    }
     
     
     

@@ -57,7 +57,7 @@ public class PreguntasController implements Initializable {
             //pierdePartida();
             System.out.println("Se perdio partida");
             App.setRoot("pierdePartida");
-            
+            //arbolActual=arbolActual.getRight();
             //System.out.println("NO ENTRA A PIERDE PARTIDA");
                     
         }else{
@@ -117,7 +117,7 @@ public class PreguntasController implements Initializable {
             //System.out.println("Porfavor escriba el animal en que estaba pensando: ");
             System.out.println("Se perdio partida");
             App.setRoot("pierdePartida");
-            
+            //arbolActual=arbolActual.getLeft();
             //System.out.println("NO ENTRA A PIERDE PARTIDA");
                     
         }else{
