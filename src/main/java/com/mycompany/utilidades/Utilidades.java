@@ -88,16 +88,17 @@ public class Utilidades {
         BinaryTree<String> raizActual = treeQuestion;
         
         while (!answers.isEmpty()){
-            if(raizActual.getRight() == null || raizActual.getLeft() == null){
-                if(answers.poll().equals("si")){
+            String resp = answers.poll();
+            //raizActual.getRight() == null || raizActual.getLeft() == null
+            if(answers.isEmpty()){
+                if(resp.equals("si")){
                     raizActual.setRight(animal);
                 } else {
                     raizActual.setLeft(animal);
                 }
-            } 
+            }
             
             else {
-                String resp = answers.poll();
                 if (resp.equals("si")){
                     raizActual = raizActual.getRight();
                 } else {

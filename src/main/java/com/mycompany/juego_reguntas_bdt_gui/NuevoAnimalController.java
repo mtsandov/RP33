@@ -14,6 +14,7 @@ import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Queue;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,9 +42,6 @@ public class NuevoAnimalController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        while (!PreguntasController.respuestasUser.isEmpty()){
-            System.out.println(PreguntasController.respuestasUser.poll());
-        }
     }    
 
     @FXML
@@ -92,6 +90,7 @@ public class NuevoAnimalController implements Initializable {
     @FXML
     private void guardarAnimal(ActionEvent event) {
         String nomAnimal=nombreAnimal.getText();
+        nomAnimal = nomAnimal.replaceFirst(String.valueOf(nomAnimal.charAt(0)), String.valueOf(nomAnimal.charAt(0)).toUpperCase());
         //PROCESO PARA OBTENER RUTA FOTO
         Image im= imagenAnimal.getImage();
         String url= im.getUrl();    
@@ -112,6 +111,24 @@ public class NuevoAnimalController implements Initializable {
                 bw.close();
                 //App.showAlert(Alert.AlertType.INFORMATION, "Nueva mascota agregada exitosamente");
                 //detalleMascota(m);
+                
+                BufferedWriter bw2 = new BufferedWriter(new FileWriter(InicioJuegoController.rutaResp, true));
+                
+                String dato = nomAnimal + " ";
+                
+                Queue<String> temp = PreguntasController.respuestasUser;
+                
+                System.out.println(temp.size());
+                
+                while (!temp.isEmpty()){
+                    dato += temp.poll() + " ";
+                }
+                
+                bw2.write(dato);
+                
+                System.out.println(dato);
+                
+                bw2.close();
          
             } catch (IOException ex) {
                 System.out.println("IOException:" + ex.getMessage());
