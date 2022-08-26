@@ -58,6 +58,13 @@ public class PierdePartidaController implements Initializable {
         App.resetearInformePartida();
         
     }
+    
+    
+    @FXML
+    void posiblesRespuestas(ActionEvent event) {
+
+    }
+
 
     @FXML
     private void salir(ActionEvent event) throws IOException {
