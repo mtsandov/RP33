@@ -54,6 +54,9 @@ public class PreguntasController implements Initializable {
     @FXML
     private void botonYes(ActionEvent event) throws IOException {
         
+        InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
+        InformePartidaController.preguntasCola.offer("Si");
+        
         boolean gameOver=false;
         
         respuestasUser.offer("si");
@@ -84,8 +87,8 @@ public class PreguntasController implements Initializable {
                 //animalAdivinado.fxml
                 //gameOver=true;
                 
-                InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
-                InformePartidaController.preguntasCola.offer("Si");
+                //InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
+                //InformePartidaController.preguntasCola.offer("Si");
                 InformePartidaController.win=true;
                 
                 //INTERFAZ
@@ -104,8 +107,8 @@ public class PreguntasController implements Initializable {
             //intentos++;
             //Partida.respuestasCola.add("Si");
             //Partida.preguntasCola.add(arbolActual.getRootContent());
-            InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
-            InformePartidaController.preguntasCola.offer("Si");
+            //InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
+            //InformePartidaController.preguntasCola.offer("Si");
             arbolActual=arbolActual.getRight();
             lblPregunta.setText(arbolActual.getRootContent());
             System.out.println("primero");
@@ -189,6 +192,10 @@ public class PreguntasController implements Initializable {
 
     @FXML
     private void botonNo(ActionEvent event) throws IOException  {
+        
+        InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
+        InformePartidaController.preguntasCola.offer("No");
+        
         //App.setRoot("pierdePartida");
         boolean gameOver=false;
         
@@ -216,8 +223,8 @@ public class PreguntasController implements Initializable {
                 //SALTA A OTRA PANTALLA MOSTRANDO EL ANIMAL ADIVINADO
                 //animalAdivinado.fxml
                 //gameOver=true;
-                InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
-                InformePartidaController.preguntasCola.offer("No");
+                //InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
+                //InformePartidaController.preguntasCola.offer("No");
                 InformePartidaController.win=true;
                 //INTERFAZ
                 //Animal.cargarAnimales();
@@ -234,8 +241,8 @@ public class PreguntasController implements Initializable {
             //intentos++;
             //Partida.respuestasCola.add("Si");
             //Partida.preguntasCola.add(arbolActual.getRootContent());
-            InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
-            InformePartidaController.preguntasCola.offer("No");
+            //InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
+            //InformePartidaController.preguntasCola.offer("No");
             arbolActual=arbolActual.getLeft();
             lblPregunta.setText(arbolActual.getRootContent());
             System.out.println("primero");

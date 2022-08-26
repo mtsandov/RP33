@@ -29,8 +29,6 @@ public class InformePartidaController implements Initializable {
     private TableView<String> tablaInforme;
     @FXML
     private TableColumn<String,String> preguntas;
-    @FXML
-    private TableColumn<String,String> respuestas;
     
     //static Queue<String> respuestasCola=new LinkedList<>();
     static Queue<String> preguntasCola=new LinkedList<>();

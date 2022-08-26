@@ -32,6 +32,8 @@ public class EmpezarPartidaController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        InformePartidaController.win=false;
+        PreguntasController.respuestasUser.clear();
         // TODO
     }    
     

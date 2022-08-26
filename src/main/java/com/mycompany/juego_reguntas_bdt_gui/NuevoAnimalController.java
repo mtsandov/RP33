@@ -4,6 +4,7 @@
  */
 package com.mycompany.juego_reguntas_bdt_gui;
 
+import com.mycompany.modelo.Animal;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -102,6 +103,8 @@ public class NuevoAnimalController implements Initializable {
         System.out.println("INFORMACION ANIMAL");
         System.out.println(nomAnimal);
         System.out.println(ruta);
+        Animal a= new Animal(nomAnimal,ruta);
+        Animal.animales.add(a);
         
         try {
                 FileWriter entrada= new FileWriter("documents/listaAnimales.txt",true);
@@ -131,6 +134,8 @@ public class NuevoAnimalController implements Initializable {
                 System.out.println(dato);
                 
                 bw2.close();
+                App.showAlert(Alert.AlertType.CONFIRMATION,"¡Nuevo animal agregado con éxito!");
+                App.setRoot("pierdePartida");
          
             } catch (IOException ex) {
                 System.out.println("IOException:" + ex.getMessage());

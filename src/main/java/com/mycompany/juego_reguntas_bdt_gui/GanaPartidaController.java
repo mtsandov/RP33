@@ -50,6 +50,7 @@ public class GanaPartidaController implements Initializable {
         App.setRoot("empezarPartida");
         App.resetearIntentosUsuario();
         App.resetearInformePartida();
+        //InformePartidaController.win=false;
     }
 
     @FXML
@@ -57,6 +58,7 @@ public class GanaPartidaController implements Initializable {
         App.setRoot("InicioJuego");
         App.resetearIntentosUsuario();
         App.resetearInformePartida();
+        //InformePartidaController.win=false;
     }
     
     private void setearImageView(String ruta){
