@@ -49,5 +49,9 @@ public class App extends Application {
     public static void resetearIntentosUsuario(){
         PreguntasController.intentos=0;
     }
+    
+    public static void resetearInformePartida(){
+        InformePartidaController.preguntasCola.clear();
+    }
 
 }

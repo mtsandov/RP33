@@ -32,8 +32,10 @@ public class InformePartidaController implements Initializable {
     @FXML
     private TableColumn<String,String> respuestas;
     
-    static Queue<String> respuestasCola=new LinkedList<>();
+    //static Queue<String> respuestasCola=new LinkedList<>();
     static Queue<String> preguntasCola=new LinkedList<>();
+    
+    static boolean win=false;
     
 
     /**
@@ -52,7 +54,7 @@ public class InformePartidaController implements Initializable {
         //respuestas.setCellValueFactory(param -> new ReadOnlyStringWrapper(param.getValue()));
         while(preguntasCola.peek()!=null){
             tablaInforme.getItems().add(preguntasCola.poll());
-            tablaInforme.getItems().add(respuestasCola.poll());
+            //tablaInforme.getItems().add(respuestasCola.poll());
         }
         //respuestas.setCellValueFactory(new PropertyValueFactory<>("respuestasCola"));
         //preguntas.setCellValueFactory(new PropertyValueFactory<>("preguntasCola"));
@@ -62,12 +64,26 @@ public class InformePartidaController implements Initializable {
     }    
 
     @FXML
-    private void regresar(ActionEvent event) {
+    private void regresar(ActionEvent event) throws IOException {
+        App.setRoot("pierdePartida");
+        for(String s:tablaInforme.getItems()){
+            System.out.println(s);
+            preguntasCola.add(s);
+            
+        }
+        if(win==true){
+            App.setRoot("ganaPartida");
+        }else{
+            App.setRoot("pierdePartida");
+        }
     }
 
     @FXML
     private void salir(ActionEvent event) throws IOException {
         App.setRoot("InicioJuego");
+        App.resetearIntentosUsuario();
+        win=false;
+        
     }
     
 }

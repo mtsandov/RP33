@@ -49,12 +49,14 @@ public class GanaPartidaController implements Initializable {
     private void jugarDeNuevo(ActionEvent event) throws IOException {
         App.setRoot("empezarPartida");
         App.resetearIntentosUsuario();
+        App.resetearInformePartida();
     }
 
     @FXML
     private void salir(ActionEvent event) throws IOException {
         App.setRoot("InicioJuego");
         App.resetearIntentosUsuario();
+        App.resetearInformePartida();
     }
     
     private void setearImageView(String ruta){

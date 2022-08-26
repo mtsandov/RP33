@@ -84,6 +84,10 @@ public class PreguntasController implements Initializable {
                 //animalAdivinado.fxml
                 //gameOver=true;
                 
+                InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
+                InformePartidaController.preguntasCola.offer("Si");
+                InformePartidaController.win=true;
+                
                 //INTERFAZ
                 
                 for(Animal a:Animal.animales){
@@ -91,6 +95,7 @@ public class PreguntasController implements Initializable {
                         GanaPartidaController.animalEncontrado=a;
                     }
                 }
+                
                 
                 App.setRoot("ganaPartida");
                 System.out.println("segundo");
@@ -100,7 +105,7 @@ public class PreguntasController implements Initializable {
             //Partida.respuestasCola.add("Si");
             //Partida.preguntasCola.add(arbolActual.getRootContent());
             InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
-            InformePartidaController.respuestasCola.offer("Si");
+            InformePartidaController.preguntasCola.offer("Si");
             arbolActual=arbolActual.getRight();
             lblPregunta.setText(arbolActual.getRootContent());
             System.out.println("primero");
@@ -211,7 +216,9 @@ public class PreguntasController implements Initializable {
                 //SALTA A OTRA PANTALLA MOSTRANDO EL ANIMAL ADIVINADO
                 //animalAdivinado.fxml
                 //gameOver=true;
-                
+                InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
+                InformePartidaController.preguntasCola.offer("No");
+                InformePartidaController.win=true;
                 //INTERFAZ
                 //Animal.cargarAnimales();
                 for(Animal a:Animal.animales){
@@ -228,7 +235,7 @@ public class PreguntasController implements Initializable {
             //Partida.respuestasCola.add("Si");
             //Partida.preguntasCola.add(arbolActual.getRootContent());
             InformePartidaController.preguntasCola.offer(arbolActual.getRootContent());
-            InformePartidaController.respuestasCola.offer("Si");
+            InformePartidaController.preguntasCola.offer("No");
             arbolActual=arbolActual.getLeft();
             lblPregunta.setText(arbolActual.getRootContent());
             System.out.println("primero");

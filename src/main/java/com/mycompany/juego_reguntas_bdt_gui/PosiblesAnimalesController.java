@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -71,15 +72,26 @@ public class PosiblesAnimalesController implements Initializable {
                 }
             }
         }
-        System.out.println("/////////////LISTA POSIBLES ANIMALES DE LA CIRCULAR LINKEDLIST/////////////");
-        for(Animal a:animalesPosibles){
-            System.out.println(a.getNombre());
-        }
-        System.out.println("///////////////////////");
+        
         
         if(!animalesPosibles.isEmpty()){
             setearImageView(animalesPosibles.get(0).getPath());
             nombreAnimal.setText(animalesPosibles.get(0).getNombre());
+            
+            System.out.println("/////////////LISTA POSIBLES ANIMALES DE LA CIRCULAR LINKEDLIST/////////////");
+            for(Animal a:animalesPosibles){
+                System.out.println(a.getNombre());
+               
+            }
+            
+            System.out.println("///////////////////////");
+        } else{
+            App.showAlert(Alert.AlertType.WARNING, "No hay posibles animales que mostrar");
+            try {
+                App.setRoot("pierdePartida");
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         }
         //System.out.println(animalesPosibles.get(0).getNombre());
         //setearImageView(animalesPosibles.get(0).getPath());

@@ -34,25 +34,29 @@ public class PierdePartidaController implements Initializable {
 
     @FXML
     private void mostrarInforme(ActionEvent event) throws IOException {
-        //App.setRoot("informePartida");
+        App.setRoot("informePartida");
+        
+        /*
         if(PreguntasController.arbolActual==null){
             App.showAlert(Alert.AlertType.INFORMATION, "No hay posibles animales que mostrar");
         }else{
             PosiblesAnimalesController.arbolAnimales=PreguntasController.arbolActual;
             App.setRoot("posiblesAnimales");
-        }
+        }*/
     }
 
     @FXML
     private void jugarDeNuevo(ActionEvent event) throws IOException {
         App.setRoot("empezarPartida");
         App.resetearIntentosUsuario();
+        App.resetearInformePartida();
     }
 
     @FXML
     private void salir(ActionEvent event) throws IOException {
         App.setRoot("InicioJuego");
         App.resetearIntentosUsuario();
+        App.resetearInformePartida();
     }
 
 }
