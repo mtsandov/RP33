@@ -114,17 +114,19 @@ public class NuevoAnimalController implements Initializable {
                 
                 BufferedWriter bw2 = new BufferedWriter(new FileWriter(InicioJuegoController.rutaResp, true));
                 
-                String dato = nomAnimal + " ";
+                String dato = nomAnimal;
                 
                 Queue<String> temp = PreguntasController.respuestasUser;
                 
                 System.out.println(temp.size());
                 
                 while (!temp.isEmpty()){
-                    dato += temp.poll() + " ";
+                    dato += " " + temp.poll();
                 }
                 
                 bw2.write(dato);
+                
+                bw2.newLine();
                 
                 System.out.println(dato);
                 
