@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
@@ -19,6 +20,9 @@ import javafx.scene.control.Alert;
  * @author diegomartinez
  */
 public class PierdePartidaController implements Initializable {
+
+    @FXML
+    private Button btnListaAniamles;
 
     /**
      * Initializes the controller class.
@@ -61,7 +65,14 @@ public class PierdePartidaController implements Initializable {
     
     
     @FXML
-    void posiblesRespuestas(ActionEvent event) {
+    private void posiblesRespuestas(ActionEvent event) throws IOException {
+        
+        if(PreguntasController.arbolActual==null){
+            App.showAlert(Alert.AlertType.INFORMATION, "No hay posibles animales que mostrar");
+        }else{
+            PosiblesAnimalesController.arbolAnimales=PreguntasController.arbolActual;
+            App.setRoot("posiblesAnimales");
+        }
 
     }
 

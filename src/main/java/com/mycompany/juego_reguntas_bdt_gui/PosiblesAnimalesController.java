@@ -168,6 +168,7 @@ public class PosiblesAnimalesController implements Initializable {
         App.setRoot("empezarPartida");
         App.resetearIntentosUsuario();
         arbolAnimales=null;
+        App.resetearInformePartida();
     }
 
 }
