@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package com.mycompany.juego_reguntas_bdt_gui;
 
 import com.mycompany.modelo.Animal;
@@ -16,30 +12,22 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 
 import javafx.scene.image.ImageView;
-/**
- * FXML Controller class
- *
- * @author diegomartinez
- */
-public class GanaPartidaController implements Initializable {
-    
-    static Animal animalEncontrado;
 
+public class GanaPartidaController implements Initializable {
+
+    static Animal animalEncontrado;
 
     @FXML
     private ImageView imgAnimal;
     @FXML
     private Label animalNombre;
-    /**
-     * Initializes the controller class.
-     */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         animalNombre.setText(animalEncontrado.getNombre());
-        setearImageView("animales/"+animalEncontrado.getPath());
-    }    
-    
+        setearImageView("animales/" + animalEncontrado.getPath());
+    }
+
     @FXML
     private void mostrarInforme(ActionEvent event) throws IOException {
         App.setRoot("informePartida");
@@ -50,7 +38,6 @@ public class GanaPartidaController implements Initializable {
         App.setRoot("empezarPartida");
         App.resetearIntentosUsuario();
         App.resetearInformePartida();
-        //InformePartidaController.win=false;
     }
 
     @FXML
@@ -58,32 +45,28 @@ public class GanaPartidaController implements Initializable {
         App.setRoot("InicioJuego");
         App.resetearIntentosUsuario();
         App.resetearInformePartida();
-        //InformePartidaController.win=false;
     }
-    
-    private void setearImageView(String ruta){
+
+    private void setearImageView(String ruta) {
         InputStream input = null;
         try {
-             String fileName =ruta;//armar la ruta de la foto
+            String fileName = ruta;
 
-             System.out.println("FOTO RUTA"+fileName);
+            System.out.println("FOTO RUTA" + fileName);
 
+            input = App.class.getResource(fileName).openStream();
 
-             //abrir el stream de la imagen de la persona
-             input = App.class.getResource(fileName).openStream();
+            Image image = new Image(input, 1000, 1000, false, false);
+            imgAnimal.setImage(image);
 
-             //crear la imagen 
-             Image image = new Image(input, 1000, 1000, false, false);
-             imgAnimal.setImage(image);
-
-            } catch (Exception ex) {
-                 System.out.println("No se encuentra archivo de imagen:  "+ex);
-                } finally {
-                if (input != null) {
-                    try {
-                   input.close();
+        } catch (Exception ex) {
+            System.out.println("No se encuentra archivo de imagen:  " + ex);
+        } finally {
+            if (input != null) {
+                try {
+                    input.close();
                 } catch (IOException ex) {
-                System.out.println("No se pudo cerrar");
+                    System.out.println("No se pudo cerrar");
                 }
             }
         }
