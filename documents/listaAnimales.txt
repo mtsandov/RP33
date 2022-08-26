@@ -23,4 +23,3 @@ Foca,foca.jpg
 Tiburon,tiburon.jpg
 Tortuga,tortuga.jpg
 Flamenco,flamenco.jpg
-Diego,d-imagen-8.jpg

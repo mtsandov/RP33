@@ -61,6 +61,7 @@ public class InicioJuegoController implements Initializable {
     
     @FXML
     private void empezarPartida(ActionEvent event) throws IOException {
+        Animal.animales.clear();
         //CARGAMOS LA LISTA ESTATICA DE LOS ANIMALES
         Animal.cargarAnimales();
         App.setRoot("empezarPartida");

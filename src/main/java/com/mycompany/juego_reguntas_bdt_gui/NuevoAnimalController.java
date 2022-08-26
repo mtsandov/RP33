@@ -37,6 +37,8 @@ public class NuevoAnimalController implements Initializable {
     private TextField nombreAnimal;
     @FXML
     private ImageView imagenAnimal;
+    
+    static boolean agregoAnimal=false;
 
     /**
      * Initializes the controller class.
@@ -135,6 +137,7 @@ public class NuevoAnimalController implements Initializable {
                 
                 bw2.close();
                 App.showAlert(Alert.AlertType.CONFIRMATION,"¡Nuevo animal agregado con éxito!");
+                agregoAnimal=true;
                 App.setRoot("pierdePartida");
          
             } catch (IOException ex) {

@@ -29,7 +29,12 @@ public class PierdePartidaController implements Initializable {
     
     @FXML
     private void agregarAnimal(ActionEvent event) throws IOException {
-        App.setRoot("nuevoAnimal");
+        if(NuevoAnimalController.agregoAnimal==false){
+            App.setRoot("nuevoAnimal");
+        }else{
+            App.showAlert(Alert.AlertType.WARNING, "Un animal ya ha sido agregado");
+        }
+        
     }
 
     @FXML
@@ -47,13 +52,16 @@ public class PierdePartidaController implements Initializable {
 
     @FXML
     private void jugarDeNuevo(ActionEvent event) throws IOException {
+        NuevoAnimalController.agregoAnimal=false;
         App.setRoot("empezarPartida");
         App.resetearIntentosUsuario();
         App.resetearInformePartida();
+        
     }
 
     @FXML
     private void salir(ActionEvent event) throws IOException {
+        NuevoAnimalController.agregoAnimal=false;
         App.setRoot("InicioJuego");
         App.resetearIntentosUsuario();
         App.resetearInformePartida();
